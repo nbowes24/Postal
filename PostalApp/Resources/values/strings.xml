@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">PostalApp</string>
+    <string name="action_settings">Settings</string>
+    <color name="light_blue">#4587ff</color>
+    <color name="white">#ffffff</color>
+    <string name="login_button_text">Login</string>
+    <string name="start_table_button_text">Start Table</string>
+    <string name="take_order_button_text">Take Order</string>
+    <string name="close_table_button_text">Close Table</string>
+    <string name="view_orders_button_text">View Orders</string>
+    <string name="admin_button_text">Admin</string>
+    <string name="logout_button_text">Logout</string>
+    <string name="change_menu_button_text">Change Menu</string>
+    <string name="accounts_button_text">Accounts</string>
+    <string name="reports_button_text">Reports</string>
+    <string name="back_button_text">Back</string>
+    <string name="add_account_button_text">Add Account</string>
+</resources>
