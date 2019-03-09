@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fitsSystemWindows="true"
+	android:background = "#4587ff">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="56dp"
+        android:paddingLeft="24dp"
+        android:paddingRight="24dp">
+
+        <TextView android:text="POStal"
+            android:layout_width="wrap_content"
+            android:layout_height="72dp"
+            android:layout_marginBottom="80dp"
+            android:layout_gravity="center_horizontal"
+			android:textSize="45dip"/>
+
+
+        <!-- Password Label -->
+			<EditText android:id="@+id/editTextAddStaffFirstName"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+				android:hint="Firstname"
+				android:layout_gravity="center"/>
+			<EditText android:id="@+id/editTextAddStaffLastName"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+				android:hint="Lastname"
+				android:layout_gravity="center"/>
+            <EditText android:id="@+id/editTextAddStaffPin"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:inputType="numberPassword"
+				android:hint="Pin"
+				android:layout_gravity="center"/>
+			<CheckBox android:id="@+id/checkBoxAddStaffAdmin"
+				android:text="@string/staff_admin_check_box"
+				android:layout_width="300dp"
+				android:layout_marginTop="12dp"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center"/>
+
+		    <Button android:id="@+id/buttonStaffAdd"
+				android:layout_width="300dp"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="12dp"
+				android:layout_marginBottom="24dp"
+				android:padding="12dp"
+				android:onClick="Save"
+				android:text="@string/staff_Add_button_text"
+				android:layout_gravity="center"/>
+
+    </LinearLayout>
+</ScrollView>

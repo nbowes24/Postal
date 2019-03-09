@@ -39,6 +39,8 @@ E:\Work\FYP\PostalApp\PostalApp\obj\Debug\81\R.txt
 E:\Work\FYP\PostalApp\PostalApp\obj\Debug\81\uploadflags.txt
 E:\Work\FYP\PostalApp\PostalApp\obj\Debug\81\res\layout\list_view_staff.xml
 E:\Work\FYP\PostalApp\PostalApp\obj\Debug\81\res\layout\admin_staff_menu.xml
+E:\Work\FYP\PostalApp\PostalApp\obj\Debug\81\res\layout\admin_staff_modify.xml
+E:\Work\FYP\PostalApp\PostalApp\obj\Debug\81\res\layout\admin_staff_add.xml
 E:\Work\FYP\PostalApp\PostalApp\bin\Debug\Mono.Android.pdb
 E:\Work\FYP\PostalApp\PostalApp\bin\Debug\mscorlib.pdb
 E:\Work\FYP\PostalApp\PostalApp\bin\Debug\Newtonsoft.Json.pdb
@@ -95,4 +97,3 @@ E:\Work\FYP\PostalApp\PostalApp\obj\Debug\81\android\assets\System.Transactions.
 E:\Work\FYP\PostalApp\PostalApp\obj\Debug\81\android\assets\System.Web.Services.pdb
 E:\Work\FYP\PostalApp\PostalApp\obj\Debug\81\android\assets\System.Xml.Linq.pdb
 E:\Work\FYP\PostalApp\PostalApp\obj\Debug\81\android\assets\System.Xml.pdb
-E:\Work\FYP\PostalApp\PostalApp\obj\Debug\81\PostalApp.csprojAssemblyReference.cache

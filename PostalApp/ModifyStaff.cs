@@ -41,15 +41,7 @@ namespace PostalApp
             {
                 AddAccount();
             };
-
-            //btnLogout.Click += delegate
-            //{
-            //    Intent intent = new Intent(this, typeof(MainActivity));
-            //    intent.SetFlags(ActivityFlags.NewTask);
-            //    StartActivity(intent);
-            //    Finish();
-            //};
-
+            
         }
 
         private async void GetStaff()
@@ -68,41 +60,24 @@ namespace PostalApp
         private void StaffListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
             var select = staffList[e.Position].Id;
-            Android.Widget.Toast.MakeText(this, select.ToString(), Android.Widget.ToastLength.Long).Show();
-            //Toast.MakeText(this, "No user found for that pin", ToastLength.Long).Show();
+            EditAccount(e);
         }
 
-        private async void AddAccount()
+        private void AddAccount()
         {
-            HttpClient client = new HttpClient();
-            HttpResponseMessage response = new HttpResponseMessage();
-            string url = $"https://postalwebapi.azurewebsites.net/api/Staffs";
-            var uri = new Uri(url);
+            Intent intent = new Intent(this, typeof(StaffAdd));
+            StartActivity(intent);
+        }
 
-            var staffTest = new Staff()
-            {
-                FirstName = "Post",
-                LastName = "Test",
-                Pin = 1234,
-                AdminFlag = false
-            };
-
-            var json = JsonConvert.SerializeObject(staffTest);
-
-            var content = new StringContent(json, Encoding.UTF8, "application/json");
-
-            response = await client.PostAsync(uri, content);
-
-
-
-
-            //var result = await client.GetAsync(url);
-            //var json = await result.Content.ReadAsStringAsync();
-            //staffList = JsonConvert.DeserializeObject<List<Staff>>(json);
-
-
-
-
+        private void EditAccount(AdapterView.ItemClickEventArgs e)
+        {
+            Intent intent = new Intent(this, typeof(StaffEdit));
+            intent.PutExtra("Id", staffList[e.Position].Id);
+            intent.PutExtra("FirstName", staffList[e.Position].FirstName);
+            intent.PutExtra("LastName", staffList[e.Position].LastName);
+            intent.PutExtra("Pin", staffList[e.Position].Pin);
+            intent.SetFlags(ActivityFlags.NewTask);
+            StartActivity(intent);
         }
     }
 }

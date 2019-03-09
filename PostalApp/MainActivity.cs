@@ -29,7 +29,7 @@ namespace PostalApp
             SetContentView(Resource.Layout.activity_main);
 
             btnLogin = FindViewById<Button>(Resource.Id.buttonLogin);
-            editPin = FindViewById<EditText>(Resource.Id.input_pin);
+            editPin = FindViewById<EditText>(Resource.Id.editTextStaffPin);
 
             btnLogin.Click += async delegate
             {

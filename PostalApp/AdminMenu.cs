@@ -19,6 +19,7 @@ namespace PostalApp
     public class AdminMenu : Activity
     {
         private Button btnAccounts;
+        private Button btnBack;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -32,32 +33,6 @@ namespace PostalApp
             {
                 AccountMenu();
             };
-
-            //var test = GetStaff();
-
-
-
-
-            //btnAdmin = FindViewById<Button>(Resource.Id.buttonAdmin);
-            //textviewUser = FindViewById<TextView>(Resource.Id.textviewUser);
-
-            //if (Intent.GetBooleanExtra("AdminFlag", false))
-            //{
-            //    btnAdmin.Visibility = ViewStates.Visible;
-            //}
-
-            //textviewUser.Text = ("Logged in as: " + Intent.GetStringExtra("FirstName"));
-
-            //btnLogout = FindViewById<Button>(Resource.Id.buttonLogout);
-            ////editPin = FindViewById<EditText>(Resource.Id.input_pin);
-
-            //btnLogout.Click += delegate
-            //{
-            //    Intent intent = new Intent(this, typeof(MainActivity));
-            //    intent.SetFlags(ActivityFlags.NewTask);
-            //    StartActivity(intent);
-            //    Finish();
-            //};
 
         }
 

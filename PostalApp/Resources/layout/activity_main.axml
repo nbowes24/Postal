@@ -22,7 +22,7 @@
 
 
         <!-- Password Label -->
-            <EditText android:id="@+id/input_pin"
+            <EditText android:id="@+id/editTextStaffPin"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:inputType="numberPassword"

@@ -2393,11 +2393,11 @@ namespace PostalApp
 			// aapt resource value: 0x7F010006
 			public const int buttonAccounts = 2130771974;
 			
-			// aapt resource value: 0x7F010009
-			public const int buttonAddAccount = 2130771977;
+			// aapt resource value: 0x7F010014
+			public const int buttonAddAccount = 2130771988;
 			
-			// aapt resource value: 0x7F010016
-			public const int buttonAdmin = 2130771990;
+			// aapt resource value: 0x7F010024
+			public const int buttonAdmin = 2130772004;
 			
 			// aapt resource value: 0x7F010008
 			public const int buttonBack = 2130771976;
@@ -2405,14 +2405,14 @@ namespace PostalApp
 			// aapt resource value: 0x7F010005
 			public const int buttonChangeMenu = 2130771973;
 			
-			// aapt resource value: 0x7F010014
-			public const int buttonCloseTable = 2130771988;
+			// aapt resource value: 0x7F010022
+			public const int buttonCloseTable = 2130772002;
 			
 			// aapt resource value: 0x7F010003
 			public const int buttonLogin = 2130771971;
 			
-			// aapt resource value: 0x7F010017
-			public const int buttonLogout = 2130771991;
+			// aapt resource value: 0x7F010025
+			public const int buttonLogout = 2130772005;
 			
 			// aapt resource value: 0x7F0C001B
 			public const int buttonPanel = 2131492891;
@@ -2420,14 +2420,20 @@ namespace PostalApp
 			// aapt resource value: 0x7F010007
 			public const int buttonReports = 2130771975;
 			
-			// aapt resource value: 0x7F010012
-			public const int buttonStartTable = 2130771986;
-			
 			// aapt resource value: 0x7F010013
-			public const int buttonTakeOrder = 2130771987;
+			public const int buttonStaffAdd = 2130771987;
 			
-			// aapt resource value: 0x7F010015
-			public const int buttonViewOrders = 2130771989;
+			// aapt resource value: 0x7F010018
+			public const int buttonStaffModifySave = 2130771992;
+			
+			// aapt resource value: 0x7F010020
+			public const int buttonStartTable = 2130772000;
+			
+			// aapt resource value: 0x7F010021
+			public const int buttonTakeOrder = 2130772001;
+			
+			// aapt resource value: 0x7F010023
+			public const int buttonViewOrders = 2130772003;
 			
 			// aapt resource value: 0x7F0C001C
 			public const int cancel_action = 2131492892;
@@ -2437,6 +2443,9 @@ namespace PostalApp
 			
 			// aapt resource value: 0x7F0C001E
 			public const int checkbox = 2131492894;
+			
+			// aapt resource value: 0x7F010012
+			public const int checkBoxAddStaffAdmin = 2130771986;
 			
 			// aapt resource value: 0x7F0C0008
 			public const int chronometer = 2131492872;
@@ -2476,6 +2485,24 @@ namespace PostalApp
 			
 			// aapt resource value: 0x7F0C002B
 			public const int design_navigation_view = 2131492907;
+			
+			// aapt resource value: 0x7F010009
+			public const int editTextAddStaffFirstName = 2130771977;
+			
+			// aapt resource value: 0x7F010010
+			public const int editTextAddStaffLastName = 2130771984;
+			
+			// aapt resource value: 0x7F010011
+			public const int editTextAddStaffPin = 2130771985;
+			
+			// aapt resource value: 0x7F010016
+			public const int editTextStaffFirstName = 2130771990;
+			
+			// aapt resource value: 0x7F010017
+			public const int editTextStaffLastName = 2130771991;
+			
+			// aapt resource value: 0x7F010002
+			public const int editTextStaffPin = 2130771970;
 			
 			// aapt resource value: 0x7F0C002C
 			public const int edit_query = 2131492908;
@@ -2519,9 +2546,6 @@ namespace PostalApp
 			// aapt resource value: 0x7F0C000C
 			public const int info = 2131492876;
 			
-			// aapt resource value: 0x7F010002
-			public const int input_pin = 2130771970;
-			
 			// aapt resource value: 0x7F0C000D
 			public const int italic = 2131492877;
 			
@@ -2543,8 +2567,8 @@ namespace PostalApp
 			// aapt resource value: 0x7F0C0040
 			public const int listMode = 2131492928;
 			
-			// aapt resource value: 0x7F010010
-			public const int listviewStaff = 2130771984;
+			// aapt resource value: 0x7F010015
+			public const int listviewStaff = 2130771989;
 			
 			// aapt resource value: 0x7F0C0041
 			public const int list_item = 2131492929;
@@ -2732,8 +2756,8 @@ namespace PostalApp
 			// aapt resource value: 0x7F0C007C
 			public const int textSpacerNoTitle = 2131492988;
 			
-			// aapt resource value: 0x7F010011
-			public const int textviewStaffName = 2130771985;
+			// aapt resource value: 0x7F010019
+			public const int textviewStaffName = 2130771993;
 			
 			// aapt resource value: 0x7F010004
 			public const int textviewUser = 2130771972;
@@ -2933,7 +2957,13 @@ namespace PostalApp
 			public const int admin_menu = 2130837507;
 			
 			// aapt resource value: 0x7F020004
-			public const int admin_staff_menu = 2130837508;
+			public const int admin_staff_add = 2130837508;
+			
+			// aapt resource value: 0x7F020005
+			public const int admin_staff_menu = 2130837509;
+			
+			// aapt resource value: 0x7F020006
+			public const int admin_staff_modify = 2130837510;
 			
 			// aapt resource value: 0x7F0F001B
 			public const int design_bottom_navigation_item = 2131689499;
@@ -2977,11 +3007,11 @@ namespace PostalApp
 			// aapt resource value: 0x7F0F0028
 			public const int design_text_input_password_icon = 2131689512;
 			
-			// aapt resource value: 0x7F020005
-			public const int list_view_staff = 2130837509;
+			// aapt resource value: 0x7F020007
+			public const int list_view_staff = 2130837511;
 			
-			// aapt resource value: 0x7F020006
-			public const int menu = 2130837510;
+			// aapt resource value: 0x7F020008
+			public const int menu = 2130837512;
 			
 			// aapt resource value: 0x7F0F0001
 			public const int notification_action = 2131689473;
@@ -3224,6 +3254,15 @@ namespace PostalApp
 			
 			// aapt resource value: 0x7F150026
 			public const int search_menu_title = 2132082726;
+			
+			// aapt resource value: 0x7F050017
+			public const int staff_Add_button_text = 2131034135;
+			
+			// aapt resource value: 0x7F050018
+			public const int staff_admin_check_box = 2131034136;
+			
+			// aapt resource value: 0x7F050016
+			public const int staff_save_button_text = 2131034134;
 			
 			// aapt resource value: 0x7F050005
 			public const int start_table_button_text = 2131034117;

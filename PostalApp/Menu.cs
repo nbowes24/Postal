@@ -37,7 +37,6 @@ namespace PostalApp
 
             btnLogout = FindViewById<Button>(Resource.Id.buttonLogout);
             btnAdmin = FindViewById<Button>(Resource.Id.buttonAdmin);
-            //editPin = FindViewById<EditText>(Resource.Id.input_pin);
 
             btnLogout.Click += delegate
             {

@@ -15,4 +15,7 @@
     <string name="reports_button_text">Reports</string>
     <string name="back_button_text">Back</string>
     <string name="add_account_button_text">Add Account</string>
+    <string name="staff_save_button_text">Save</string>
+    <string name="staff_Add_button_text">Add</string>
+    <string name="staff_admin_check_box">Admin</string>
 </resources>
