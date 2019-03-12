@@ -33,7 +33,7 @@ namespace PostalApp
             listViewStaffView = FindViewById<ListView>(Resource.Id.listviewStaff);
             btnAddAccount = FindViewById<Button>(Resource.Id.buttonAddAccount);
 
-            GetStaff();
+            GetStaffs();
 
             listViewStaffView.ItemClick += StaffListView_ItemClick;
 
@@ -44,7 +44,7 @@ namespace PostalApp
             
         }
 
-        private async void GetStaff()
+        private async void GetStaffs()
         {
             HttpClient client = new HttpClient();
             string url = $"https://postalwebapi.azurewebsites.net/api/Staffs";
@@ -66,7 +66,7 @@ namespace PostalApp
         private void AddAccount()
         {
             Intent intent = new Intent(this, typeof(StaffAdd));
-            StartActivity(intent);
+            StartActivityForResult(intent, 0);
         }
 
         private void EditAccount(AdapterView.ItemClickEventArgs e)
@@ -76,8 +76,18 @@ namespace PostalApp
             intent.PutExtra("FirstName", staffList[e.Position].FirstName);
             intent.PutExtra("LastName", staffList[e.Position].LastName);
             intent.PutExtra("Pin", staffList[e.Position].Pin);
-            intent.SetFlags(ActivityFlags.NewTask);
-            StartActivity(intent);
+            StartActivityForResult(intent, 0);
+        }
+        
+        protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
+        {
+            if(requestCode == 0)
+            {
+                if(resultCode == Result.Ok)
+                {
+                    GetStaffs();
+                }
+            }
         }
     }
 }

@@ -26,6 +26,43 @@ namespace PostalApp
 		
 		public static void UpdateIdValues()
 		{
+			global::AndroidHUD.Resource.Attribute.ahBarColor = global::PostalApp.Resource.Attribute.ahBarColor;
+			global::AndroidHUD.Resource.Attribute.ahBarLength = global::PostalApp.Resource.Attribute.ahBarLength;
+			global::AndroidHUD.Resource.Attribute.ahBarWidth = global::PostalApp.Resource.Attribute.ahBarWidth;
+			global::AndroidHUD.Resource.Attribute.ahCircleColor = global::PostalApp.Resource.Attribute.ahCircleColor;
+			global::AndroidHUD.Resource.Attribute.ahDelayMillis = global::PostalApp.Resource.Attribute.ahDelayMillis;
+			global::AndroidHUD.Resource.Attribute.ahRadius = global::PostalApp.Resource.Attribute.ahRadius;
+			global::AndroidHUD.Resource.Attribute.ahRimColor = global::PostalApp.Resource.Attribute.ahRimColor;
+			global::AndroidHUD.Resource.Attribute.ahRimWidth = global::PostalApp.Resource.Attribute.ahRimWidth;
+			global::AndroidHUD.Resource.Attribute.ahSpinSpeed = global::PostalApp.Resource.Attribute.ahSpinSpeed;
+			global::AndroidHUD.Resource.Attribute.ahText = global::PostalApp.Resource.Attribute.ahText;
+			global::AndroidHUD.Resource.Attribute.ahTextColor = global::PostalApp.Resource.Attribute.ahTextColor;
+			global::AndroidHUD.Resource.Attribute.ahTextSize = global::PostalApp.Resource.Attribute.ahTextSize;
+			global::AndroidHUD.Resource.Drawable.ic_errorstatus = global::PostalApp.Resource.Drawable.ic_errorstatus;
+			global::AndroidHUD.Resource.Drawable.ic_successstatus = global::PostalApp.Resource.Drawable.ic_successstatus;
+			global::AndroidHUD.Resource.Drawable.roundedbg = global::PostalApp.Resource.Drawable.roundedbg;
+			global::AndroidHUD.Resource.Drawable.roundedbgdark = global::PostalApp.Resource.Drawable.roundedbgdark;
+			global::AndroidHUD.Resource.Id.loadingImage = global::PostalApp.Resource.Id.loadingImage;
+			global::AndroidHUD.Resource.Id.loadingProgressBar = global::PostalApp.Resource.Id.loadingProgressBar;
+			global::AndroidHUD.Resource.Id.loadingProgressWheel = global::PostalApp.Resource.Id.loadingProgressWheel;
+			global::AndroidHUD.Resource.Id.textViewStatus = global::PostalApp.Resource.Id.textViewStatus;
+			global::AndroidHUD.Resource.Layout.loading = global::PostalApp.Resource.Layout.loading;
+			global::AndroidHUD.Resource.Layout.loadingimage = global::PostalApp.Resource.Layout.loadingimage;
+			global::AndroidHUD.Resource.Layout.loadingprogress = global::PostalApp.Resource.Layout.loadingprogress;
+			global::AndroidHUD.Resource.String.library_name = global::PostalApp.Resource.String.library_name;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel = global::PostalApp.Resource.Styleable.ProgressWheel;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahBarColor = global::PostalApp.Resource.Styleable.ProgressWheel_ahBarColor;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahBarLength = global::PostalApp.Resource.Styleable.ProgressWheel_ahBarLength;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahBarWidth = global::PostalApp.Resource.Styleable.ProgressWheel_ahBarWidth;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahCircleColor = global::PostalApp.Resource.Styleable.ProgressWheel_ahCircleColor;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahDelayMillis = global::PostalApp.Resource.Styleable.ProgressWheel_ahDelayMillis;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahRadius = global::PostalApp.Resource.Styleable.ProgressWheel_ahRadius;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahRimColor = global::PostalApp.Resource.Styleable.ProgressWheel_ahRimColor;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahRimWidth = global::PostalApp.Resource.Styleable.ProgressWheel_ahRimWidth;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahSpinSpeed = global::PostalApp.Resource.Styleable.ProgressWheel_ahSpinSpeed;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahText = global::PostalApp.Resource.Styleable.ProgressWheel_ahText;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahTextColor = global::PostalApp.Resource.Styleable.ProgressWheel_ahTextColor;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahTextSize = global::PostalApp.Resource.Styleable.ProgressWheel_ahTextSize;
 		}
 		
 		public partial class Animation
@@ -209,6 +246,42 @@ namespace PostalApp
 			
 			// aapt resource value: 0x7f010075
 			public const int activityChooserViewStyle = 2130772085;
+			
+			// aapt resource value: 0x7f01015d
+			public const int ahBarColor = 2130772317;
+			
+			// aapt resource value: 0x7f010165
+			public const int ahBarLength = 2130772325;
+			
+			// aapt resource value: 0x7f010164
+			public const int ahBarWidth = 2130772324;
+			
+			// aapt resource value: 0x7f010162
+			public const int ahCircleColor = 2130772322;
+			
+			// aapt resource value: 0x7f010161
+			public const int ahDelayMillis = 2130772321;
+			
+			// aapt resource value: 0x7f010163
+			public const int ahRadius = 2130772323;
+			
+			// aapt resource value: 0x7f01015e
+			public const int ahRimColor = 2130772318;
+			
+			// aapt resource value: 0x7f01015f
+			public const int ahRimWidth = 2130772319;
+			
+			// aapt resource value: 0x7f010160
+			public const int ahSpinSpeed = 2130772320;
+			
+			// aapt resource value: 0x7f01015a
+			public const int ahText = 2130772314;
+			
+			// aapt resource value: 0x7f01015b
+			public const int ahTextColor = 2130772315;
+			
+			// aapt resource value: 0x7f01015c
+			public const int ahTextSize = 2130772316;
 			
 			// aapt resource value: 0x7f01009a
 			public const int alertDialogButtonGroupStyle = 2130772122;
@@ -2233,26 +2306,26 @@ namespace PostalApp
 			// aapt resource value: 0x7f020053
 			public const int avd_hide_password = 2130837587;
 			
-			// aapt resource value: 0x7f02006a
-			public const int avd_hide_password_1 = 2130837610;
+			// aapt resource value: 0x7f02006e
+			public const int avd_hide_password_1 = 2130837614;
 			
-			// aapt resource value: 0x7f02006b
-			public const int avd_hide_password_2 = 2130837611;
+			// aapt resource value: 0x7f02006f
+			public const int avd_hide_password_2 = 2130837615;
 			
-			// aapt resource value: 0x7f02006c
-			public const int avd_hide_password_3 = 2130837612;
+			// aapt resource value: 0x7f020070
+			public const int avd_hide_password_3 = 2130837616;
 			
 			// aapt resource value: 0x7f020054
 			public const int avd_show_password = 2130837588;
 			
-			// aapt resource value: 0x7f02006d
-			public const int avd_show_password_1 = 2130837613;
+			// aapt resource value: 0x7f020071
+			public const int avd_show_password_1 = 2130837617;
 			
-			// aapt resource value: 0x7f02006e
-			public const int avd_show_password_2 = 2130837614;
+			// aapt resource value: 0x7f020072
+			public const int avd_show_password_2 = 2130837618;
 			
-			// aapt resource value: 0x7f02006f
-			public const int avd_show_password_3 = 2130837615;
+			// aapt resource value: 0x7f020073
+			public const int avd_show_password_3 = 2130837619;
 			
 			// aapt resource value: 0x7f020055
 			public const int design_bottom_navigation_item_background = 2130837589;
@@ -2273,49 +2346,61 @@ namespace PostalApp
 			public const int design_snackbar_background = 2130837594;
 			
 			// aapt resource value: 0x7f02005b
-			public const int navigation_empty_icon = 2130837595;
+			public const int ic_errorstatus = 2130837595;
 			
 			// aapt resource value: 0x7f02005c
-			public const int notification_action_background = 2130837596;
+			public const int ic_successstatus = 2130837596;
 			
 			// aapt resource value: 0x7f02005d
-			public const int notification_bg = 2130837597;
+			public const int navigation_empty_icon = 2130837597;
 			
 			// aapt resource value: 0x7f02005e
-			public const int notification_bg_low = 2130837598;
+			public const int notification_action_background = 2130837598;
 			
 			// aapt resource value: 0x7f02005f
-			public const int notification_bg_low_normal = 2130837599;
+			public const int notification_bg = 2130837599;
 			
 			// aapt resource value: 0x7f020060
-			public const int notification_bg_low_pressed = 2130837600;
+			public const int notification_bg_low = 2130837600;
 			
 			// aapt resource value: 0x7f020061
-			public const int notification_bg_normal = 2130837601;
+			public const int notification_bg_low_normal = 2130837601;
 			
 			// aapt resource value: 0x7f020062
-			public const int notification_bg_normal_pressed = 2130837602;
+			public const int notification_bg_low_pressed = 2130837602;
 			
 			// aapt resource value: 0x7f020063
-			public const int notification_icon_background = 2130837603;
-			
-			// aapt resource value: 0x7f020068
-			public const int notification_template_icon_bg = 2130837608;
-			
-			// aapt resource value: 0x7f020069
-			public const int notification_template_icon_low_bg = 2130837609;
+			public const int notification_bg_normal = 2130837603;
 			
 			// aapt resource value: 0x7f020064
-			public const int notification_tile_bg = 2130837604;
+			public const int notification_bg_normal_pressed = 2130837604;
 			
 			// aapt resource value: 0x7f020065
-			public const int notify_panel_notification_icon_bg = 2130837605;
+			public const int notification_icon_background = 2130837605;
+			
+			// aapt resource value: 0x7f02006c
+			public const int notification_template_icon_bg = 2130837612;
+			
+			// aapt resource value: 0x7f02006d
+			public const int notification_template_icon_low_bg = 2130837613;
 			
 			// aapt resource value: 0x7f020066
-			public const int tooltip_frame_dark = 2130837606;
+			public const int notification_tile_bg = 2130837606;
 			
 			// aapt resource value: 0x7f020067
-			public const int tooltip_frame_light = 2130837607;
+			public const int notify_panel_notification_icon_bg = 2130837607;
+			
+			// aapt resource value: 0x7f020068
+			public const int roundedbg = 2130837608;
+			
+			// aapt resource value: 0x7f020069
+			public const int roundedbgdark = 2130837609;
+			
+			// aapt resource value: 0x7f02006a
+			public const int tooltip_frame_dark = 2130837610;
+			
+			// aapt resource value: 0x7f02006b
+			public const int tooltip_frame_light = 2130837611;
 			
 			static Drawable()
 			{
@@ -2348,8 +2433,8 @@ namespace PostalApp
 			// aapt resource value: 0x7f080037
 			public const int SYM = 2131230775;
 			
-			// aapt resource value: 0x7f0800b4
-			public const int action0 = 2131230900;
+			// aapt resource value: 0x7f0800bd
+			public const int action0 = 2131230909;
 			
 			// aapt resource value: 0x7f08007c
 			public const int action_bar = 2131230844;
@@ -2372,17 +2457,17 @@ namespace PostalApp
 			// aapt resource value: 0x7f08005a
 			public const int action_bar_title = 2131230810;
 			
-			// aapt resource value: 0x7f0800b1
-			public const int action_container = 2131230897;
+			// aapt resource value: 0x7f0800ba
+			public const int action_container = 2131230906;
 			
 			// aapt resource value: 0x7f08007d
 			public const int action_context_bar = 2131230845;
 			
-			// aapt resource value: 0x7f0800b8
-			public const int action_divider = 2131230904;
+			// aapt resource value: 0x7f0800c1
+			public const int action_divider = 2131230913;
 			
-			// aapt resource value: 0x7f0800b2
-			public const int action_image = 2131230898;
+			// aapt resource value: 0x7f0800bb
+			public const int action_image = 2131230907;
 			
 			// aapt resource value: 0x7f080003
 			public const int action_menu_divider = 2131230723;
@@ -2399,11 +2484,11 @@ namespace PostalApp
 			// aapt resource value: 0x7f08005c
 			public const int action_mode_close_button = 2131230812;
 			
-			// aapt resource value: 0x7f0800b3
-			public const int action_text = 2131230899;
+			// aapt resource value: 0x7f0800bc
+			public const int action_text = 2131230908;
 			
-			// aapt resource value: 0x7f0800c1
-			public const int actions = 2131230913;
+			// aapt resource value: 0x7f0800ca
+			public const int actions = 2131230922;
 			
 			// aapt resource value: 0x7f08005d
 			public const int activity_chooser_view_content = 2131230813;
@@ -2438,26 +2523,29 @@ namespace PostalApp
 			// aapt resource value: 0x7f08008f
 			public const int buttonAccounts = 2131230863;
 			
-			// aapt resource value: 0x7f080097
-			public const int buttonAddAccount = 2131230871;
+			// aapt resource value: 0x7f080098
+			public const int buttonAddAccount = 2131230872;
 			
-			// aapt resource value: 0x7f0800af
-			public const int buttonAdmin = 2131230895;
+			// aapt resource value: 0x7f08009e
+			public const int buttonAddTable = 2131230878;
 			
-			// aapt resource value: 0x7f080091
-			public const int buttonBack = 2131230865;
+			// aapt resource value: 0x7f0800b8
+			public const int buttonAdmin = 2131230904;
+			
+			// aapt resource value: 0x7f080092
+			public const int buttonBack = 2131230866;
 			
 			// aapt resource value: 0x7f08008e
 			public const int buttonChangeMenu = 2131230862;
 			
-			// aapt resource value: 0x7f0800ad
-			public const int buttonCloseTable = 2131230893;
+			// aapt resource value: 0x7f0800b6
+			public const int buttonCloseTable = 2131230902;
 			
 			// aapt resource value: 0x7f08008c
 			public const int buttonLogin = 2131230860;
 			
-			// aapt resource value: 0x7f0800b0
-			public const int buttonLogout = 2131230896;
+			// aapt resource value: 0x7f0800b9
+			public const int buttonLogout = 2131230905;
 			
 			// aapt resource value: 0x7f080063
 			public const int buttonPanel = 2131230819;
@@ -2465,23 +2553,29 @@ namespace PostalApp
 			// aapt resource value: 0x7f080090
 			public const int buttonReports = 2131230864;
 			
-			// aapt resource value: 0x7f080096
-			public const int buttonStaffAdd = 2131230870;
+			// aapt resource value: 0x7f080097
+			public const int buttonStaffAdd = 2131230871;
 			
-			// aapt resource value: 0x7f08009b
-			public const int buttonStaffModifySave = 2131230875;
+			// aapt resource value: 0x7f08009d
+			public const int buttonStaffModifyDelete = 2131230877;
 			
-			// aapt resource value: 0x7f0800ab
-			public const int buttonStartTable = 2131230891;
+			// aapt resource value: 0x7f08009c
+			public const int buttonStaffModifySave = 2131230876;
 			
-			// aapt resource value: 0x7f0800ac
-			public const int buttonTakeOrder = 2131230892;
+			// aapt resource value: 0x7f0800b4
+			public const int buttonStartTable = 2131230900;
 			
-			// aapt resource value: 0x7f0800ae
-			public const int buttonViewOrders = 2131230894;
+			// aapt resource value: 0x7f080091
+			public const int buttonTables = 2131230865;
 			
 			// aapt resource value: 0x7f0800b5
-			public const int cancel_action = 2131230901;
+			public const int buttonTakeOrder = 2131230901;
+			
+			// aapt resource value: 0x7f0800b7
+			public const int buttonViewOrders = 2131230903;
+			
+			// aapt resource value: 0x7f0800be
+			public const int cancel_action = 2131230910;
 			
 			// aapt resource value: 0x7f080045
 			public const int center = 2131230789;
@@ -2492,14 +2586,14 @@ namespace PostalApp
 			// aapt resource value: 0x7f080047
 			public const int center_vertical = 2131230791;
 			
-			// aapt resource value: 0x7f080095
-			public const int checkBoxAddStaffAdmin = 2131230869;
+			// aapt resource value: 0x7f080096
+			public const int checkBoxAddStaffAdmin = 2131230870;
 			
 			// aapt resource value: 0x7f080073
 			public const int checkbox = 2131230835;
 			
-			// aapt resource value: 0x7f0800bd
-			public const int chronometer = 2131230909;
+			// aapt resource value: 0x7f0800c6
+			public const int chronometer = 2131230918;
 			
 			// aapt resource value: 0x7f08004e
 			public const int clip_horizontal = 2131230798;
@@ -2510,14 +2604,14 @@ namespace PostalApp
 			// aapt resource value: 0x7f080039
 			public const int collapseActionView = 2131230777;
 			
-			// aapt resource value: 0x7f08009e
-			public const int container = 2131230878;
+			// aapt resource value: 0x7f0800a2
+			public const int container = 2131230882;
 			
 			// aapt resource value: 0x7f080066
 			public const int contentPanel = 2131230822;
 			
-			// aapt resource value: 0x7f08009f
-			public const int coordinator = 2131230879;
+			// aapt resource value: 0x7f0800a3
+			public const int coordinator = 2131230883;
 			
 			// aapt resource value: 0x7f08006d
 			public const int custom = 2131230829;
@@ -2531,38 +2625,38 @@ namespace PostalApp
 			// aapt resource value: 0x7f080060
 			public const int default_activity_button = 2131230816;
 			
-			// aapt resource value: 0x7f0800a1
-			public const int design_bottom_sheet = 2131230881;
-			
-			// aapt resource value: 0x7f0800a8
-			public const int design_menu_item_action_area = 2131230888;
-			
-			// aapt resource value: 0x7f0800a7
-			public const int design_menu_item_action_area_stub = 2131230887;
-			
-			// aapt resource value: 0x7f0800a6
-			public const int design_menu_item_text = 2131230886;
-			
 			// aapt resource value: 0x7f0800a5
-			public const int design_navigation_view = 2131230885;
+			public const int design_bottom_sheet = 2131230885;
+			
+			// aapt resource value: 0x7f0800ac
+			public const int design_menu_item_action_area = 2131230892;
+			
+			// aapt resource value: 0x7f0800ab
+			public const int design_menu_item_action_area_stub = 2131230891;
+			
+			// aapt resource value: 0x7f0800aa
+			public const int design_menu_item_text = 2131230890;
+			
+			// aapt resource value: 0x7f0800a9
+			public const int design_navigation_view = 2131230889;
 			
 			// aapt resource value: 0x7f080020
 			public const int disableHome = 2131230752;
 			
-			// aapt resource value: 0x7f080092
-			public const int editTextAddStaffFirstName = 2131230866;
-			
 			// aapt resource value: 0x7f080093
-			public const int editTextAddStaffLastName = 2131230867;
+			public const int editTextAddStaffFirstName = 2131230867;
 			
 			// aapt resource value: 0x7f080094
-			public const int editTextAddStaffPin = 2131230868;
+			public const int editTextAddStaffLastName = 2131230868;
 			
-			// aapt resource value: 0x7f080099
-			public const int editTextStaffFirstName = 2131230873;
+			// aapt resource value: 0x7f080095
+			public const int editTextAddStaffPin = 2131230869;
 			
 			// aapt resource value: 0x7f08009a
-			public const int editTextStaffLastName = 2131230874;
+			public const int editTextStaffFirstName = 2131230874;
+			
+			// aapt resource value: 0x7f08009b
+			public const int editTextStaffLastName = 2131230875;
 			
 			// aapt resource value: 0x7f08008b
 			public const int editTextStaffPin = 2131230859;
@@ -2573,8 +2667,8 @@ namespace PostalApp
 			// aapt resource value: 0x7f080030
 			public const int end = 2131230768;
 			
-			// aapt resource value: 0x7f0800c3
-			public const int end_padder = 2131230915;
+			// aapt resource value: 0x7f0800cc
+			public const int end_padder = 2131230924;
 			
 			// aapt resource value: 0x7f08003f
 			public const int enterAlways = 2131230783;
@@ -2618,8 +2712,8 @@ namespace PostalApp
 			// aapt resource value: 0x7f080062
 			public const int icon = 2131230818;
 			
-			// aapt resource value: 0x7f0800c2
-			public const int icon_group = 2131230914;
+			// aapt resource value: 0x7f0800cb
+			public const int icon_group = 2131230923;
 			
 			// aapt resource value: 0x7f08003a
 			public const int ifRoom = 2131230778;
@@ -2627,8 +2721,8 @@ namespace PostalApp
 			// aapt resource value: 0x7f08005f
 			public const int image = 2131230815;
 			
-			// aapt resource value: 0x7f0800be
-			public const int info = 2131230910;
+			// aapt resource value: 0x7f0800c7
+			public const int info = 2131230919;
 			
 			// aapt resource value: 0x7f080059
 			public const int italic = 2131230809;
@@ -2636,8 +2730,8 @@ namespace PostalApp
 			// aapt resource value: 0x7f080000
 			public const int item_touch_helper_previous_elevation = 2131230720;
 			
-			// aapt resource value: 0x7f08009d
-			public const int largeLabel = 2131230877;
+			// aapt resource value: 0x7f0800a1
+			public const int largeLabel = 2131230881;
 			
 			// aapt resource value: 0x7f080049
 			public const int left = 2131230793;
@@ -2654,17 +2748,29 @@ namespace PostalApp
 			// aapt resource value: 0x7f080061
 			public const int list_item = 2131230817;
 			
-			// aapt resource value: 0x7f080098
-			public const int listviewStaff = 2131230872;
+			// aapt resource value: 0x7f080099
+			public const int listviewStaff = 2131230873;
 			
-			// aapt resource value: 0x7f0800c6
-			public const int masked = 2131230918;
+			// aapt resource value: 0x7f08009f
+			public const int listviewTable = 2131230879;
 			
-			// aapt resource value: 0x7f0800b7
-			public const int media_actions = 2131230903;
+			// aapt resource value: 0x7f0800b2
+			public const int loadingImage = 2131230898;
 			
-			// aapt resource value: 0x7f0800c4
-			public const int message = 2131230916;
+			// aapt resource value: 0x7f0800b0
+			public const int loadingProgressBar = 2131230896;
+			
+			// aapt resource value: 0x7f0800b3
+			public const int loadingProgressWheel = 2131230899;
+			
+			// aapt resource value: 0x7f0800cf
+			public const int masked = 2131230927;
+			
+			// aapt resource value: 0x7f0800c0
+			public const int media_actions = 2131230912;
+			
+			// aapt resource value: 0x7f0800cd
+			public const int message = 2131230925;
 			
 			// aapt resource value: 0x7f080031
 			public const int middle = 2131230769;
@@ -2675,8 +2781,8 @@ namespace PostalApp
 			// aapt resource value: 0x7f080028
 			public const int multiply = 2131230760;
 			
-			// aapt resource value: 0x7f0800a4
-			public const int navigation_header_container = 2131230884;
+			// aapt resource value: 0x7f0800a8
+			public const int navigation_header_container = 2131230888;
 			
 			// aapt resource value: 0x7f08003b
 			public const int never = 2131230779;
@@ -2687,14 +2793,14 @@ namespace PostalApp
 			// aapt resource value: 0x7f08001e
 			public const int normal = 2131230750;
 			
-			// aapt resource value: 0x7f0800c0
-			public const int notification_background = 2131230912;
+			// aapt resource value: 0x7f0800c9
+			public const int notification_background = 2131230921;
 			
-			// aapt resource value: 0x7f0800ba
-			public const int notification_main_column = 2131230906;
+			// aapt resource value: 0x7f0800c3
+			public const int notification_main_column = 2131230915;
 			
-			// aapt resource value: 0x7f0800b9
-			public const int notification_main_column_container = 2131230905;
+			// aapt resource value: 0x7f0800c2
+			public const int notification_main_column_container = 2131230914;
 			
 			// aapt resource value: 0x7f08004c
 			public const int parallax = 2131230796;
@@ -2720,11 +2826,11 @@ namespace PostalApp
 			// aapt resource value: 0x7f08004a
 			public const int right = 2131230794;
 			
-			// aapt resource value: 0x7f0800bf
-			public const int right_icon = 2131230911;
+			// aapt resource value: 0x7f0800c8
+			public const int right_icon = 2131230920;
 			
-			// aapt resource value: 0x7f0800bb
-			public const int right_side = 2131230907;
+			// aapt resource value: 0x7f0800c4
+			public const int right_side = 2131230916;
 			
 			// aapt resource value: 0x7f08000c
 			public const int save_image_matrix = 2131230732;
@@ -2798,14 +2904,14 @@ namespace PostalApp
 			// aapt resource value: 0x7f080025
 			public const int showTitle = 2131230757;
 			
-			// aapt resource value: 0x7f08009c
-			public const int smallLabel = 2131230876;
+			// aapt resource value: 0x7f0800a0
+			public const int smallLabel = 2131230880;
 			
-			// aapt resource value: 0x7f0800a3
-			public const int snackbar_action = 2131230883;
+			// aapt resource value: 0x7f0800a7
+			public const int snackbar_action = 2131230887;
 			
-			// aapt resource value: 0x7f0800a2
-			public const int snackbar_text = 2131230882;
+			// aapt resource value: 0x7f0800a6
+			public const int snackbar_text = 2131230886;
 			
 			// aapt resource value: 0x7f080043
 			public const int snap = 2131230787;
@@ -2828,8 +2934,8 @@ namespace PostalApp
 			// aapt resource value: 0x7f08004b
 			public const int start = 2131230795;
 			
-			// aapt resource value: 0x7f0800b6
-			public const int status_bar_latest_event_content = 2131230902;
+			// aapt resource value: 0x7f0800bf
+			public const int status_bar_latest_event_content = 2131230911;
 			
 			// aapt resource value: 0x7f080076
 			public const int submenuarrow = 2131230838;
@@ -2855,8 +2961,11 @@ namespace PostalApp
 			// aapt resource value: 0x7f080069
 			public const int textSpacerNoTitle = 2131230825;
 			
-			// aapt resource value: 0x7f0800a9
-			public const int text_input_password_toggle = 2131230889;
+			// aapt resource value: 0x7f0800b1
+			public const int textViewStatus = 2131230897;
+			
+			// aapt resource value: 0x7f0800ad
+			public const int text_input_password_toggle = 2131230893;
 			
 			// aapt resource value: 0x7f080014
 			public const int textinput_counter = 2131230740;
@@ -2864,14 +2973,17 @@ namespace PostalApp
 			// aapt resource value: 0x7f080015
 			public const int textinput_error = 2131230741;
 			
-			// aapt resource value: 0x7f0800aa
-			public const int textviewStaffName = 2131230890;
+			// aapt resource value: 0x7f0800ae
+			public const int textviewStaffName = 2131230894;
+			
+			// aapt resource value: 0x7f0800af
+			public const int textviewTable = 2131230895;
 			
 			// aapt resource value: 0x7f08008d
 			public const int textviewUser = 2131230861;
 			
-			// aapt resource value: 0x7f0800bc
-			public const int time = 2131230908;
+			// aapt resource value: 0x7f0800c5
+			public const int time = 2131230917;
 			
 			// aapt resource value: 0x7f08001c
 			public const int title = 2131230748;
@@ -2888,8 +3000,8 @@ namespace PostalApp
 			// aapt resource value: 0x7f08006e
 			public const int topPanel = 2131230830;
 			
-			// aapt resource value: 0x7f0800a0
-			public const int touch_outside = 2131230880;
+			// aapt resource value: 0x7f0800a4
+			public const int touch_outside = 2131230884;
 			
 			// aapt resource value: 0x7f08000f
 			public const int transition_current_scene = 2131230735;
@@ -2918,8 +3030,8 @@ namespace PostalApp
 			// aapt resource value: 0x7f080016
 			public const int view_offset_helper = 2131230742;
 			
-			// aapt resource value: 0x7f0800c5
-			public const int visible = 2131230917;
+			// aapt resource value: 0x7f0800ce
+			public const int visible = 2131230926;
 			
 			// aapt resource value: 0x7f08003c
 			public const int withText = 2131230780;
@@ -3077,112 +3189,127 @@ namespace PostalApp
 			public const int admin_staff_modify = 2130968606;
 			
 			// aapt resource value: 0x7f04001f
-			public const int design_bottom_navigation_item = 2130968607;
+			public const int admin_table_modify = 2130968607;
 			
 			// aapt resource value: 0x7f040020
-			public const int design_bottom_sheet_dialog = 2130968608;
+			public const int design_bottom_navigation_item = 2130968608;
 			
 			// aapt resource value: 0x7f040021
-			public const int design_layout_snackbar = 2130968609;
+			public const int design_bottom_sheet_dialog = 2130968609;
 			
 			// aapt resource value: 0x7f040022
-			public const int design_layout_snackbar_include = 2130968610;
+			public const int design_layout_snackbar = 2130968610;
 			
 			// aapt resource value: 0x7f040023
-			public const int design_layout_tab_icon = 2130968611;
+			public const int design_layout_snackbar_include = 2130968611;
 			
 			// aapt resource value: 0x7f040024
-			public const int design_layout_tab_text = 2130968612;
+			public const int design_layout_tab_icon = 2130968612;
 			
 			// aapt resource value: 0x7f040025
-			public const int design_menu_item_action_area = 2130968613;
+			public const int design_layout_tab_text = 2130968613;
 			
 			// aapt resource value: 0x7f040026
-			public const int design_navigation_item = 2130968614;
+			public const int design_menu_item_action_area = 2130968614;
 			
 			// aapt resource value: 0x7f040027
-			public const int design_navigation_item_header = 2130968615;
+			public const int design_navigation_item = 2130968615;
 			
 			// aapt resource value: 0x7f040028
-			public const int design_navigation_item_separator = 2130968616;
+			public const int design_navigation_item_header = 2130968616;
 			
 			// aapt resource value: 0x7f040029
-			public const int design_navigation_item_subheader = 2130968617;
+			public const int design_navigation_item_separator = 2130968617;
 			
 			// aapt resource value: 0x7f04002a
-			public const int design_navigation_menu = 2130968618;
+			public const int design_navigation_item_subheader = 2130968618;
 			
 			// aapt resource value: 0x7f04002b
-			public const int design_navigation_menu_item = 2130968619;
+			public const int design_navigation_menu = 2130968619;
 			
 			// aapt resource value: 0x7f04002c
-			public const int design_text_input_password_icon = 2130968620;
+			public const int design_navigation_menu_item = 2130968620;
 			
 			// aapt resource value: 0x7f04002d
-			public const int list_view_staff = 2130968621;
+			public const int design_text_input_password_icon = 2130968621;
 			
 			// aapt resource value: 0x7f04002e
-			public const int menu = 2130968622;
+			public const int list_view_staff = 2130968622;
 			
 			// aapt resource value: 0x7f04002f
-			public const int notification_action = 2130968623;
+			public const int list_view_table = 2130968623;
 			
 			// aapt resource value: 0x7f040030
-			public const int notification_action_tombstone = 2130968624;
+			public const int loading = 2130968624;
 			
 			// aapt resource value: 0x7f040031
-			public const int notification_media_action = 2130968625;
+			public const int loadingimage = 2130968625;
 			
 			// aapt resource value: 0x7f040032
-			public const int notification_media_cancel_action = 2130968626;
+			public const int loadingprogress = 2130968626;
 			
 			// aapt resource value: 0x7f040033
-			public const int notification_template_big_media = 2130968627;
+			public const int menu = 2130968627;
 			
 			// aapt resource value: 0x7f040034
-			public const int notification_template_big_media_custom = 2130968628;
+			public const int notification_action = 2130968628;
 			
 			// aapt resource value: 0x7f040035
-			public const int notification_template_big_media_narrow = 2130968629;
+			public const int notification_action_tombstone = 2130968629;
 			
 			// aapt resource value: 0x7f040036
-			public const int notification_template_big_media_narrow_custom = 2130968630;
+			public const int notification_media_action = 2130968630;
 			
 			// aapt resource value: 0x7f040037
-			public const int notification_template_custom_big = 2130968631;
+			public const int notification_media_cancel_action = 2130968631;
 			
 			// aapt resource value: 0x7f040038
-			public const int notification_template_icon_group = 2130968632;
+			public const int notification_template_big_media = 2130968632;
 			
 			// aapt resource value: 0x7f040039
-			public const int notification_template_lines_media = 2130968633;
+			public const int notification_template_big_media_custom = 2130968633;
 			
 			// aapt resource value: 0x7f04003a
-			public const int notification_template_media = 2130968634;
+			public const int notification_template_big_media_narrow = 2130968634;
 			
 			// aapt resource value: 0x7f04003b
-			public const int notification_template_media_custom = 2130968635;
+			public const int notification_template_big_media_narrow_custom = 2130968635;
 			
 			// aapt resource value: 0x7f04003c
-			public const int notification_template_part_chronometer = 2130968636;
+			public const int notification_template_custom_big = 2130968636;
 			
 			// aapt resource value: 0x7f04003d
-			public const int notification_template_part_time = 2130968637;
+			public const int notification_template_icon_group = 2130968637;
 			
 			// aapt resource value: 0x7f04003e
-			public const int select_dialog_item_material = 2130968638;
+			public const int notification_template_lines_media = 2130968638;
 			
 			// aapt resource value: 0x7f04003f
-			public const int select_dialog_multichoice_material = 2130968639;
+			public const int notification_template_media = 2130968639;
 			
 			// aapt resource value: 0x7f040040
-			public const int select_dialog_singlechoice_material = 2130968640;
+			public const int notification_template_media_custom = 2130968640;
 			
 			// aapt resource value: 0x7f040041
-			public const int support_simple_spinner_dropdown_item = 2130968641;
+			public const int notification_template_part_chronometer = 2130968641;
 			
 			// aapt resource value: 0x7f040042
-			public const int tooltip = 2130968642;
+			public const int notification_template_part_time = 2130968642;
+			
+			// aapt resource value: 0x7f040043
+			public const int select_dialog_item_material = 2130968643;
+			
+			// aapt resource value: 0x7f040044
+			public const int select_dialog_multichoice_material = 2130968644;
+			
+			// aapt resource value: 0x7f040045
+			public const int select_dialog_singlechoice_material = 2130968645;
+			
+			// aapt resource value: 0x7f040046
+			public const int support_simple_spinner_dropdown_item = 2130968646;
+			
+			// aapt resource value: 0x7f040047
+			public const int tooltip = 2130968647;
 			
 			static Layout()
 			{
@@ -3306,44 +3433,50 @@ namespace PostalApp
 			// aapt resource value: 0x7f090010
 			public const int abc_toolbar_collapse_description = 2131296272;
 			
-			// aapt resource value: 0x7f090031
-			public const int accounts_button_text = 2131296305;
+			// aapt resource value: 0x7f090032
+			public const int accounts_button_text = 2131296306;
+			
+			// aapt resource value: 0x7f090029
+			public const int action_settings = 2131296297;
+			
+			// aapt resource value: 0x7f090035
+			public const int add_account_button_text = 2131296309;
+			
+			// aapt resource value: 0x7f09003b
+			public const int add_table_button_text = 2131296315;
+			
+			// aapt resource value: 0x7f09002f
+			public const int admin_button_text = 2131296303;
 			
 			// aapt resource value: 0x7f090028
-			public const int action_settings = 2131296296;
-			
-			// aapt resource value: 0x7f090034
-			public const int add_account_button_text = 2131296308;
-			
-			// aapt resource value: 0x7f09002e
-			public const int admin_button_text = 2131296302;
-			
-			// aapt resource value: 0x7f090027
-			public const int app_name = 2131296295;
+			public const int app_name = 2131296296;
 			
 			// aapt resource value: 0x7f09001e
 			public const int appbar_scrolling_view_behavior = 2131296286;
 			
-			// aapt resource value: 0x7f090033
-			public const int back_button_text = 2131296307;
+			// aapt resource value: 0x7f090034
+			public const int back_button_text = 2131296308;
 			
 			// aapt resource value: 0x7f09001f
 			public const int bottom_sheet_behavior = 2131296287;
 			
-			// aapt resource value: 0x7f090030
-			public const int change_menu_button_text = 2131296304;
+			// aapt resource value: 0x7f090031
+			public const int change_menu_button_text = 2131296305;
 			
 			// aapt resource value: 0x7f090020
 			public const int character_counter_pattern = 2131296288;
 			
-			// aapt resource value: 0x7f09002c
-			public const int close_table_button_text = 2131296300;
+			// aapt resource value: 0x7f09002d
+			public const int close_table_button_text = 2131296301;
 			
-			// aapt resource value: 0x7f090029
-			public const int login_button_text = 2131296297;
+			// aapt resource value: 0x7f090027
+			public const int library_name = 2131296295;
 			
-			// aapt resource value: 0x7f09002f
-			public const int logout_button_text = 2131296303;
+			// aapt resource value: 0x7f09002a
+			public const int login_button_text = 2131296298;
+			
+			// aapt resource value: 0x7f090030
+			public const int logout_button_text = 2131296304;
 			
 			// aapt resource value: 0x7f090021
 			public const int password_toggle_content_description = 2131296289;
@@ -3360,32 +3493,38 @@ namespace PostalApp
 			// aapt resource value: 0x7f090025
 			public const int path_password_strike_through = 2131296293;
 			
-			// aapt resource value: 0x7f090032
-			public const int reports_button_text = 2131296306;
+			// aapt resource value: 0x7f090033
+			public const int reports_button_text = 2131296307;
 			
 			// aapt resource value: 0x7f090011
 			public const int search_menu_title = 2131296273;
 			
-			// aapt resource value: 0x7f090036
-			public const int staff_Add_button_text = 2131296310;
-			
 			// aapt resource value: 0x7f090037
-			public const int staff_admin_check_box = 2131296311;
+			public const int staff_Add_button_text = 2131296311;
 			
-			// aapt resource value: 0x7f090035
-			public const int staff_save_button_text = 2131296309;
+			// aapt resource value: 0x7f090038
+			public const int staff_admin_check_box = 2131296312;
 			
-			// aapt resource value: 0x7f09002a
-			public const int start_table_button_text = 2131296298;
+			// aapt resource value: 0x7f090039
+			public const int staff_delete_button_text = 2131296313;
+			
+			// aapt resource value: 0x7f090036
+			public const int staff_save_button_text = 2131296310;
+			
+			// aapt resource value: 0x7f09002b
+			public const int start_table_button_text = 2131296299;
 			
 			// aapt resource value: 0x7f090026
 			public const int status_bar_notification_info_overflow = 2131296294;
 			
-			// aapt resource value: 0x7f09002b
-			public const int take_order_button_text = 2131296299;
+			// aapt resource value: 0x7f09003a
+			public const int table_button_text = 2131296314;
 			
-			// aapt resource value: 0x7f09002d
-			public const int view_orders_button_text = 2131296301;
+			// aapt resource value: 0x7f09002c
+			public const int take_order_button_text = 2131296300;
+			
+			// aapt resource value: 0x7f09002e
+			public const int view_orders_button_text = 2131296302;
 			
 			static String()
 			{
@@ -6011,6 +6150,56 @@ namespace PostalApp
 			
 			// aapt resource value: 0
 			public const int PopupWindowBackgroundState_state_above_anchor = 0;
+			
+			public static int[] ProgressWheel = new int[] {
+					2130772314,
+					2130772315,
+					2130772316,
+					2130772317,
+					2130772318,
+					2130772319,
+					2130772320,
+					2130772321,
+					2130772322,
+					2130772323,
+					2130772324,
+					2130772325};
+			
+			// aapt resource value: 3
+			public const int ProgressWheel_ahBarColor = 3;
+			
+			// aapt resource value: 11
+			public const int ProgressWheel_ahBarLength = 11;
+			
+			// aapt resource value: 10
+			public const int ProgressWheel_ahBarWidth = 10;
+			
+			// aapt resource value: 8
+			public const int ProgressWheel_ahCircleColor = 8;
+			
+			// aapt resource value: 7
+			public const int ProgressWheel_ahDelayMillis = 7;
+			
+			// aapt resource value: 9
+			public const int ProgressWheel_ahRadius = 9;
+			
+			// aapt resource value: 4
+			public const int ProgressWheel_ahRimColor = 4;
+			
+			// aapt resource value: 5
+			public const int ProgressWheel_ahRimWidth = 5;
+			
+			// aapt resource value: 6
+			public const int ProgressWheel_ahSpinSpeed = 6;
+			
+			// aapt resource value: 0
+			public const int ProgressWheel_ahText = 0;
+			
+			// aapt resource value: 1
+			public const int ProgressWheel_ahTextColor = 1;
+			
+			// aapt resource value: 2
+			public const int ProgressWheel_ahTextSize = 2;
 			
 			public static int[] RecycleListView = new int[] {
 					2130772175,

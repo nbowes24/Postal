@@ -49,7 +49,7 @@ namespace PostalApp
             string url = $"https://postalwebapi.azurewebsites.net/api/Staffs";
             var uri = new Uri(url);
 
-            var staffTest = new Staff()
+            var staff = new Staff()
             {
                 FirstName = editTextAddStaffFirstName.Text,
                 LastName = editTextAddStaffLastName.Text,
@@ -57,11 +57,20 @@ namespace PostalApp
                 AdminFlag = checkBoxAddStaffAdmin.Checked
             };
 
-            var json = JsonConvert.SerializeObject(staffTest);
+            var json = JsonConvert.SerializeObject(staff);
 
             var content = new StringContent(json, Encoding.UTF8, "application/json");
 
             response = await client.PostAsync(uri, content);
+
+            Intent returnIntent = new Intent();
+
+            if (response.IsSuccessStatusCode)
+            {
+                SetResult(Result.Ok, returnIntent);
+            }
+
+            Finish();
         }
     }
 }

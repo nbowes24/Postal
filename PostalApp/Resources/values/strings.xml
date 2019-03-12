@@ -18,4 +18,7 @@
     <string name="staff_save_button_text">Save</string>
     <string name="staff_Add_button_text">Add</string>
     <string name="staff_admin_check_box">Admin</string>
+    <string name="staff_delete_button_text">Delete</string>
+    <string name="table_button_text">Tables</string>
+    <string name="add_table_button_text">Add Table</string>
 </resources>

@@ -19,6 +19,7 @@ namespace PostalApp
     public class AdminMenu : Activity
     {
         private Button btnAccounts;
+        private Button btnTables;
         private Button btnBack;
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -28,10 +29,16 @@ namespace PostalApp
             SetContentView(Resource.Layout.admin_menu);
 
             btnAccounts = FindViewById<Button>(Resource.Id.buttonAccounts);
+            btnTables = FindViewById<Button>(Resource.Id.buttonTables);
 
             btnAccounts.Click += delegate
             {
                 AccountMenu();
+            };
+
+            btnTables.Click += delegate
+            {
+                TableMenu();
             };
 
         }
@@ -39,6 +46,12 @@ namespace PostalApp
         private void AccountMenu()
         {
             Intent intent = new Intent(this, typeof(ModifyStaff));
+            StartActivity(intent);
+        }
+
+        private void TableMenu()
+        {
+            Intent intent = new Intent(this, typeof(ModifyTable));
             StartActivity(intent);
         }
     }
