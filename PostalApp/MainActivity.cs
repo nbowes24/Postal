@@ -42,6 +42,7 @@ namespace PostalApp
                 else
                 {
                     Intent intent = new Intent(this, typeof(Menu));
+                    intent.PutExtra("StaffId", staff.Id);
                     intent.PutExtra("FirstName", staff.FirstName);
                     intent.PutExtra("AdminFlag", staff.AdminFlag);
                     intent.SetFlags(ActivityFlags.NewTask);

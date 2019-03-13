@@ -21,4 +21,5 @@
     <string name="staff_delete_button_text">Delete</string>
     <string name="table_button_text">Tables</string>
     <string name="add_table_button_text">Add Table</string>
+    <string name="textview_add_table">Start a Table</string>
 </resources>

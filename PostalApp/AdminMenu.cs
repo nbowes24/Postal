@@ -20,7 +20,6 @@ namespace PostalApp
     {
         private Button btnAccounts;
         private Button btnTables;
-        private Button btnBack;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {

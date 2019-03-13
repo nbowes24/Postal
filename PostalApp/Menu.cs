@@ -16,6 +16,7 @@ namespace PostalApp
     public class Menu : Activity
     {
         private Button btnAdmin;
+        private Button btnStartTable;
         private Button btnLogout;
         private TextView textviewUser;
 
@@ -26,6 +27,8 @@ namespace PostalApp
             SetContentView(Resource.Layout.menu);
             
             btnAdmin = FindViewById<Button>(Resource.Id.buttonAdmin);
+            btnStartTable = FindViewById<Button>(Resource.Id.buttonStartTable);
+            btnLogout = FindViewById<Button>(Resource.Id.buttonLogout);
             textviewUser = FindViewById<TextView>(Resource.Id.textviewUser);
 
             if (Intent.GetBooleanExtra("AdminFlag", false))
@@ -34,9 +37,6 @@ namespace PostalApp
             }
 
             textviewUser.Text = ("Logged in as: " + Intent.GetStringExtra("FirstName"));
-
-            btnLogout = FindViewById<Button>(Resource.Id.buttonLogout);
-            btnAdmin = FindViewById<Button>(Resource.Id.buttonAdmin);
 
             btnLogout.Click += delegate
             {
@@ -48,7 +48,21 @@ namespace PostalApp
                 AdminMenu();
             };
 
+            btnStartTable.Click += delegate
+            {
+                StartTable();
+            };
+
         }
+
+
+        private void StartTable()
+        {
+            Intent intent = new Intent(this, typeof(StartTable));
+            intent.PutExtra("StaffId", Intent.GetIntExtra("StaffId",1));
+            StartActivity(intent);
+        }
+
         private void Logout()
         {
             Intent intent = new Intent(this, typeof(MainActivity));

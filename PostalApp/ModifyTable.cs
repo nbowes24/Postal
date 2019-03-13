@@ -15,6 +15,7 @@ using Newtonsoft.Json;
 using PostalApp.Model;
 using Acr.UserDialogs;
 using Newtonsoft.Json.Linq;
+using PostalApp.Data;
 
 namespace PostalApp
 {
@@ -25,6 +26,7 @@ namespace PostalApp
         private Button btnAddTable;
         private List<Table> tableList = new List<Table>();
         private TableAdapter adapter;
+        private TableService tableService = new TableService();
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -50,18 +52,10 @@ namespace PostalApp
 
         private async void GetTables()
         {
-            HttpClient client = new HttpClient();
-            string url = $"https://postalwebapi.azurewebsites.net/api/TableNums";
-            var uri = new Uri(url);
-            var result = await client.GetAsync(url);
-            var json = await result.Content.ReadAsStringAsync();
-            if (IsValidJson(json))
-            {
-                tableList = JsonConvert.DeserializeObject<List<Table>>(json);
+            tableList = await tableService.RefreshDataAsync();
 
-                adapter = new TableAdapter(this, tableList);
-                listViewTableView.Adapter = adapter;
-            }
+            adapter = new TableAdapter(this, tableList);
+            listViewTableView.Adapter = adapter;
         }
 
         private void TableListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
@@ -79,26 +73,14 @@ namespace PostalApp
 
             if (result.Ok)
             {
-                HttpClient client = new HttpClient();
-                HttpResponseMessage response = new HttpResponseMessage();
-                string url = $"https://postalwebapi.azurewebsites.net/api/TableNums";
-                var uri = new Uri(url);
-
                 var table = new Table()
                 {
                     TableNumber = Int32.Parse(result.Text)
                 };
 
-                var json = JsonConvert.SerializeObject(table);
+                await tableService.SaveTableItemAsync(table, true);
 
-                var content = new StringContent(json, Encoding.UTF8, "application/json");
-
-                response = await client.PostAsync(uri, content);
-
-                if (response.IsSuccessStatusCode)
-                {
-                    GetTables();
-                }
+                GetTables();
             }
         }
 
@@ -111,47 +93,9 @@ namespace PostalApp
 
             if (result)
             {
-                HttpClient client = new HttpClient();
-                HttpResponseMessage response = new HttpResponseMessage();
-                string url = $"https://postalwebapi.azurewebsites.net/api/TableNums/{tableList[e.Position].Id}";
-                var uri = new Uri(url);
-
-                response = await client.DeleteAsync(uri);
-
-                if (response.IsSuccessStatusCode)
-                {
-                    GetTables();
-                }
-            }
-        }
-
-
-        public static bool IsValidJson(string strInput)
-        {
-            strInput = strInput.Trim();
-            if ((strInput.StartsWith("{") && strInput.EndsWith("}")) || //For object
-                (strInput.StartsWith("[") && strInput.EndsWith("]"))) //For array
-            {
-                try
-                {
-                    var obj = JToken.Parse(strInput);
-                    return true;
-                }
-                catch (JsonReaderException jex)
-                {
-                    //Exception in parsing json
-                    Console.WriteLine(jex.Message);
-                    return false;
-                }
-                catch (Exception ex) //some other exception
-                {
-                    Console.WriteLine(ex.ToString());
-                    return false;
-                }
-            }
-            else
-            {
-                return false;
+                await tableService.DeleteTableItemAsync(tableList[e.Position].Id.ToString());
+                
+                GetTables();
             }
         }
     }

@@ -56,8 +56,11 @@
     <Reference Include="Mono.Android" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\ITableService.cs" />
+    <Compile Include="Data\TableService.cs" />
     <Compile Include="Model\TableAdapter.cs" />
     <Compile Include="Model\Table.cs" />
+    <Compile Include="StartTable.cs" />
     <Compile Include="ModifyTable.cs" />
     <Compile Include="StaffAdd.cs" />
     <Compile Include="Menu.cs" />
@@ -158,6 +161,12 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\list_view_table.axml">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\start_table.axml">
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
       <SubType>Designer</SubType>
     </AndroidResource>
