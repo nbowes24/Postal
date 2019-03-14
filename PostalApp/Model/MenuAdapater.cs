@@ -12,21 +12,21 @@ using Android.Widget;
 
 namespace PostalApp.Model
 {
-    class StaffAdapter : BaseAdapter<Staff>
+    class MenuAdapter : BaseAdapter<Model.Menu>
     {
-        public List<Staff> staffList;
+        public List<Model.Menu> menuList;
         private Context sContext;
-        public StaffAdapter(Context context, List<Staff> list)
+        public MenuAdapter(Context context, List<Model.Menu> list)
         {
-            staffList = list;
+            menuList = list;
             sContext = context;
         }
 
-        public override Staff this[int position]
+        public override Model.Menu this[int position]
         {
             get
             {
-                return staffList[position];
+                return menuList[position];
             }
         }
 
@@ -34,7 +34,7 @@ namespace PostalApp.Model
         {
             get
             {
-                return staffList.Count;
+                return menuList.Count;
             }
         }
 
@@ -50,10 +50,10 @@ namespace PostalApp.Model
             {
                 if (row == null)
                 {
-                    row = LayoutInflater.From(sContext).Inflate(Resource.Layout.list_view_staff, null);
+                    row = LayoutInflater.From(sContext).Inflate(Resource.Layout.list_view_menu_category, null);
                 }
-                TextView txtName = row.FindViewById<TextView>(Resource.Id.textviewStaffName);
-                txtName.Text = staffList[position].FirstName;
+                TextView txtName = row.FindViewById<TextView>(Resource.Id.textviewMenuCategoryItem);
+                txtName.Text = menuList[position].FoodDescription;
                 
             }
             catch (Exception e)

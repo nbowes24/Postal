@@ -20,6 +20,8 @@ namespace PostalApp
     {
         private Button btnAccounts;
         private Button btnTables;
+        private Button btnCategory;
+        private Button btnMenu;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -29,6 +31,9 @@ namespace PostalApp
 
             btnAccounts = FindViewById<Button>(Resource.Id.buttonAccounts);
             btnTables = FindViewById<Button>(Resource.Id.buttonTables);
+            btnCategory = FindViewById<Button>(Resource.Id.buttonAdminCategories);
+            btnMenu = FindViewById<Button>(Resource.Id.buttonAdminMenu);
+
 
             btnAccounts.Click += delegate
             {
@@ -38,6 +43,16 @@ namespace PostalApp
             btnTables.Click += delegate
             {
                 TableMenu();
+            };
+
+            btnCategory.Click += delegate
+            {
+                CategoryMenu();
+            };
+
+            btnMenu.Click += delegate
+            {
+                AdminModifyMenu();
             };
 
         }
@@ -52,6 +67,19 @@ namespace PostalApp
         {
             Intent intent = new Intent(this, typeof(ModifyTable));
             StartActivity(intent);
+        }
+
+        private void CategoryMenu()
+        {
+            Intent intent = new Intent(this, typeof(AdminCategories));
+            StartActivity(intent);
+        }
+
+        private void AdminModifyMenu()
+        {
+            Intent intent = new Intent(Application.Context, typeof(ModifyMenu));
+            StartActivity(intent);
+            
         }
     }
 }

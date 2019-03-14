@@ -12,6 +12,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Java.Lang;
 using Android.Content;
+using Acr.UserDialogs;
 
 namespace PostalApp
 {
@@ -25,6 +26,7 @@ namespace PostalApp
         {
           
             base.OnCreate(savedInstanceState);
+            UserDialogs.Init(this);
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.activity_main);
 
@@ -33,24 +35,25 @@ namespace PostalApp
 
             btnLogin.Click += async delegate
             {
-                var staff = await CheckLogin(Integer.ParseInt(editPin.Text));
-
-                if(staff == null)
+                using (UserDialogs.Instance.Loading("Logging In..."))
                 {
-                    Toast.MakeText(this, "No user found for that pin", ToastLength.Long).Show();
-                }
-                else
-                {
-                    Intent intent = new Intent(this, typeof(Menu));
-                    intent.PutExtra("StaffId", staff.Id);
-                    intent.PutExtra("FirstName", staff.FirstName);
-                    intent.PutExtra("AdminFlag", staff.AdminFlag);
-                    intent.SetFlags(ActivityFlags.NewTask);
-                    StartActivity(intent);
-                    Finish();
-                }
+                    var staff = await CheckLogin(Integer.ParseInt(editPin.Text));
 
-                
+                    if (staff == null)
+                    {
+                        UserDialogs.Instance.Alert("No user found for that pin");
+                    }
+                    else
+                    {
+                        Intent intent = new Intent(this, typeof(Menu));
+                        intent.PutExtra("StaffId", staff.Id);
+                        intent.PutExtra("FirstName", staff.FirstName);
+                        intent.PutExtra("AdminFlag", staff.AdminFlag);
+                        intent.SetFlags(ActivityFlags.NewTask);
+                        StartActivity(intent);
+                        Finish();
+                    }
+                }
             };
         }
 

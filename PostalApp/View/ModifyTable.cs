@@ -60,7 +60,6 @@ namespace PostalApp
 
         private void TableListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
-            var table = tableList[e.Position].Id;
             DeleteTable(e);
         }
 

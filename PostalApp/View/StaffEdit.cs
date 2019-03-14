@@ -63,7 +63,7 @@ namespace PostalApp
             string url = $"https://postalwebapi.azurewebsites.net/api/Staffs/{staffId}";
             var uri = new Uri(url);
 
-            var staffTest = new Staff()
+            var staff = new Staff()
             {
                 Id = staffId,
                 FirstName = editTextStaffFirstName.Text,
@@ -71,7 +71,7 @@ namespace PostalApp
                 Pin = Int32.Parse(editTextStaffPin.Text)
             };
 
-            var json = JsonConvert.SerializeObject(staffTest);
+            var json = JsonConvert.SerializeObject(staff);
 
             var content = new StringContent(json, Encoding.UTF8, "application/json");
 

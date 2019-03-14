@@ -10,16 +10,20 @@
     <string name="view_orders_button_text">View Orders</string>
     <string name="admin_button_text">Admin</string>
     <string name="logout_button_text">Logout</string>
-    <string name="change_menu_button_text">Change Menu</string>
+    <string name="admin_menu_button_text">Menu</string>
+    <string name="admin_categories_button_text">Categories</string>
     <string name="accounts_button_text">Accounts</string>
     <string name="reports_button_text">Reports</string>
     <string name="back_button_text">Back</string>
     <string name="add_account_button_text">Add Account</string>
+    <string name="add_category_button_text">Add Category</string>
     <string name="staff_save_button_text">Save</string>
-    <string name="staff_Add_button_text">Add</string>
+    <string name="staff_add_button_text">Add</string>
+    <string name="category_add_button_text">Add</string>
     <string name="staff_admin_check_box">Admin</string>
     <string name="staff_delete_button_text">Delete</string>
     <string name="table_button_text">Tables</string>
     <string name="add_table_button_text">Add Table</string>
     <string name="textview_add_table">Start a Table</string>
+    <string name="textview_close_table">Close a Table</string>
 </resources>

@@ -43,9 +43,9 @@ namespace PostalApp.Model
             return position;
         }
 
-        public override View GetView(int position, View convertView, ViewGroup parent)
+        public override Android.Views.View GetView(int position, Android.Views.View convertView, ViewGroup parent)
         {
-            View row = convertView;
+            Android.Views.View row = convertView;
             try
             {
                 if (row == null)

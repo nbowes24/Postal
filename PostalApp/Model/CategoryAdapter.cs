@@ -12,21 +12,21 @@ using Android.Widget;
 
 namespace PostalApp.Model
 {
-    class StaffAdapter : BaseAdapter<Staff>
+    class CategoryAdapter : BaseAdapter<Category>
     {
-        public List<Staff> staffList;
+        public List<Category> categoryList;
         private Context sContext;
-        public StaffAdapter(Context context, List<Staff> list)
+        public CategoryAdapter(Context context, List<Category> list)
         {
-            staffList = list;
+            categoryList = list;
             sContext = context;
         }
 
-        public override Staff this[int position]
+        public override Category this[int position]
         {
             get
             {
-                return staffList[position];
+                return categoryList[position];
             }
         }
 
@@ -34,7 +34,7 @@ namespace PostalApp.Model
         {
             get
             {
-                return staffList.Count;
+                return categoryList.Count;
             }
         }
 
@@ -50,10 +50,10 @@ namespace PostalApp.Model
             {
                 if (row == null)
                 {
-                    row = LayoutInflater.From(sContext).Inflate(Resource.Layout.list_view_staff, null);
+                    row = LayoutInflater.From(sContext).Inflate(Resource.Layout.list_view_category, null);
                 }
-                TextView txtName = row.FindViewById<TextView>(Resource.Id.textviewStaffName);
-                txtName.Text = staffList[position].FirstName;
+                TextView txtName = row.FindViewById<TextView>(Resource.Id.textviewCategories);
+                txtName.Text = categoryList[position].CategoryText;
                 
             }
             catch (Exception e)

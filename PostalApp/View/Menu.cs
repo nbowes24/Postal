@@ -17,8 +17,10 @@ namespace PostalApp
     {
         private Button btnAdmin;
         private Button btnStartTable;
+        private Button btnCloseTable;
         private Button btnLogout;
         private TextView textviewUser;
+        private bool AdminFlag;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -28,10 +30,13 @@ namespace PostalApp
             
             btnAdmin = FindViewById<Button>(Resource.Id.buttonAdmin);
             btnStartTable = FindViewById<Button>(Resource.Id.buttonStartTable);
+            btnCloseTable = FindViewById<Button>(Resource.Id.buttonCloseTable);
             btnLogout = FindViewById<Button>(Resource.Id.buttonLogout);
             textviewUser = FindViewById<TextView>(Resource.Id.textviewUser);
 
-            if (Intent.GetBooleanExtra("AdminFlag", false))
+            AdminFlag = Intent.GetBooleanExtra("AdminFlag", false);
+
+            if (AdminFlag)
             {
                 btnAdmin.Visibility = ViewStates.Visible;
             }
@@ -53,6 +58,11 @@ namespace PostalApp
                 StartTable();
             };
 
+            btnCloseTable.Click += delegate
+            {
+                CloseTable();
+            };
+
         }
 
 
@@ -60,6 +70,14 @@ namespace PostalApp
         {
             Intent intent = new Intent(this, typeof(StartTable));
             intent.PutExtra("StaffId", Intent.GetIntExtra("StaffId",1));
+            StartActivity(intent);
+        }
+
+        private void CloseTable()
+        {
+            Intent intent = new Intent(this, typeof(CloseTable));
+            intent.PutExtra("StaffId", Intent.GetIntExtra("StaffId", 1));
+            intent.PutExtra("AdminFlag", AdminFlag);
             StartActivity(intent);
         }
 

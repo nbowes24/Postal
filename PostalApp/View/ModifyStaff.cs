@@ -12,6 +12,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Newtonsoft.Json;
+using PostalApp.Data;
 using PostalApp.Model;
 
 namespace PostalApp
@@ -23,6 +24,7 @@ namespace PostalApp
         private Button btnAddAccount;
         private List<Staff> staffList = new List<Staff>();
         private StaffAdapter adapter;
+        private StaffService staffService = new StaffService();
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -46,12 +48,7 @@ namespace PostalApp
 
         private async void GetStaffs()
         {
-            HttpClient client = new HttpClient();
-            string url = $"https://postalwebapi.azurewebsites.net/api/Staffs";
-            var uri = new Uri(url);
-            var result = await client.GetAsync(url);
-            var json = await result.Content.ReadAsStringAsync();
-            staffList = JsonConvert.DeserializeObject<List<Staff>>(json);
+            staffList = await staffService.RefreshDataAsync();
 
             adapter = new StaffAdapter(this, staffList);
             listViewStaffView.Adapter = adapter;
@@ -59,7 +56,6 @@ namespace PostalApp
 
         private void StaffListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
-            var select = staffList[e.Position].Id;
             EditAccount(e);
         }
 
