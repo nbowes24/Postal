@@ -4,7 +4,7 @@
     android:layout_height="fill_parent"
     android:fitsSystemWindows="true"
 	android:background = "#4587ff"
-	>
+	android:layout_marginLeft="20dp">
 
     <LinearLayout
         android:orientation="vertical"
@@ -21,49 +21,44 @@
             android:layout_gravity="center_horizontal"
 			android:textSize="45dip"
 			android:textColor="@color/white"/>
-		<EditText android:id="@+id/editTextStaffFirstName"
+		<Spinner android:id = "@+id/spinnerMenuCategoriesAdd"
+			android:layout_gravity="center"
+			android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+		<EditText android:id="@+id/editTextAddMenuDescription"
 		    android:layout_width="300dp"
 		    android:layout_height="wrap_content"
 		    android:inputType="text"
+			android:hint="Description"
 			android:layout_gravity="center"
 			android:backgroundTint="@color/white"
 			android:textColor="@color/white"/>
-		<EditText android:id="@+id/editTextStaffLastName"
+		<EditText android:id="@+id/editTextAddMenuPrice"
 		    android:layout_width="300dp"
 		    android:layout_height="wrap_content"
-		    android:inputType="text"
+		    android:inputType="number|numberDecimal"
+			android:hint="Price"
 			android:layout_gravity="center"
 			android:backgroundTint="@color/white"
 			android:textColor="@color/white"/>
-		<EditText android:id="@+id/editTextStaffPin"
-		    android:layout_width="300dp"
-		    android:layout_height="wrap_content"
-		    android:inputType="numberPassword"
+		<CheckBox android:id="@+id/checkBoxMenuAvailability"
+			android:text="@string/admin_menu_availabilty_checkbox"
+			android:layout_width="300dp"
+			android:layout_marginTop="12dp"
+			android:layout_height="wrap_content"
 			android:layout_gravity="center"
-			android:backgroundTint="@color/white"
+			android:buttonTint="@color/white"
 			android:textColor="@color/white"/>
-		<Button android:id="@+id/buttonStaffModifySave"
+		<Button android:id="@+id/buttonMenuAdd"
 			android:layout_width="300dp"
 			android:layout_height="wrap_content"
-			android:layout_marginTop="24dp"
+			android:layout_marginTop="12dp"
 			android:layout_marginBottom="24dp"
 			android:padding="12dp"
 			android:onClick="Save"
-			android:text="@string/staff_save_button_text"
+			android:text="@string/staff_add_button_text"
 			android:layout_gravity="center"
 			android:background="@drawable/transparent_bg_bordered_button"
 			android:textColor="@color/white"/>
-		<Button android:id="@+id/buttonStaffModifyDelete"
-			android:layout_width="300dp"
-			android:layout_height="wrap_content"
-			android:layout_marginTop="24dp"
-			android:layout_marginBottom="24dp"
-			android:padding="12dp"
-			android:onClick="Save"
-			android:text="@string/delete_button_text"
-			android:layout_gravity="center"
-			android:background="@drawable/transparent_bg_bordered_button"
-			android:textColor="@color/white"/>
-
     </LinearLayout>
 </ScrollView>

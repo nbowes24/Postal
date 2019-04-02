@@ -17,6 +17,8 @@ namespace PostalApp
     {
         private Button btnAdmin;
         private Button btnStartTable;
+        private Button btnTakeOrder;
+        private Button buttonViewOrders;
         private Button btnCloseTable;
         private Button btnLogout;
         private TextView textviewUser;
@@ -30,6 +32,8 @@ namespace PostalApp
             
             btnAdmin = FindViewById<Button>(Resource.Id.buttonAdmin);
             btnStartTable = FindViewById<Button>(Resource.Id.buttonStartTable);
+            btnTakeOrder = FindViewById<Button>(Resource.Id.buttonTakeOrder);
+            buttonViewOrders = FindViewById<Button>(Resource.Id.buttonViewOrders);
             btnCloseTable = FindViewById<Button>(Resource.Id.buttonCloseTable);
             btnLogout = FindViewById<Button>(Resource.Id.buttonLogout);
             textviewUser = FindViewById<TextView>(Resource.Id.textviewUser);
@@ -63,8 +67,29 @@ namespace PostalApp
                 CloseTable();
             };
 
+            btnTakeOrder.Click += delegate
+            {
+                TakeOrder();
+            };
+            buttonViewOrders.Click += delegate
+            {
+                ViewOrders();
+            };
         }
 
+        private void ViewOrders()
+        {
+            Intent intent = new Intent(this, typeof(ViewOrder));
+            intent.PutExtra("StaffId", Intent.GetIntExtra("StaffId", 1));
+            StartActivity(intent);
+        }
+
+        private void TakeOrder()
+        {
+            Intent intent = new Intent(this, typeof(TakeOrderTable));
+            intent.PutExtra("StaffId", Intent.GetIntExtra("StaffId", 1));
+            StartActivity(intent);
+        }
 
         private void StartTable()
         {

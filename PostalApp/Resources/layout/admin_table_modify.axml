@@ -4,7 +4,14 @@
    android:layout_width="match_parent"  
    android:layout_height="match_parent"  
 >  
-				<Button android:id="@+id/buttonAddTable"
+	<TextView android:text="POStal"
+		android:layout_width="wrap_content"
+		android:layout_height="72dp"
+		android:layout_marginTop="60dp"
+		android:layout_gravity="center_horizontal"
+		android:textSize="45dip"
+		android:textColor="@color/white"/>
+	<Button android:id="@+id/buttonAddTable"
 		android:layout_width="300dp"
 		android:layout_height="wrap_content"
 		android:layout_marginTop="24dp"
@@ -12,7 +19,9 @@
 		android:padding="12dp"
 		android:onClick="Login"
 		android:text="@string/add_table_button_text"
-		android:layout_gravity="center"/>
+		android:layout_gravity="center"
+		android:background="@drawable/transparent_bg_bordered_button"
+		android:textColor="@color/white"/>
 	<ListView  
 		android:id="@+id/listviewTable"  
 		android:layout_width="300dp"  

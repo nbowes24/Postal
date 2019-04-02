@@ -1,44 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="56dp"
-        android:paddingLeft="24dp"
-        android:paddingRight="24dp"
-		android:background = "#4587ff"
-		android:gravity="center"
-		>
-
-        <TextView android:text="POStal"
-            android:layout_width="wrap_content"
-            android:layout_height="72dp"
-            android:layout_marginBottom="10dp"
-            android:layout_gravity="center_horizontal"
-			android:textSize="45dip"/>
-		<TextView android:text="Choose a category"
-            android:layout_width="wrap_content"
-            android:layout_height="32dp"
-            android:layout_marginBottom="10dp"
-            android:layout_gravity="center_horizontal"
-			android:textSize="22dip"
-			android:textColor="#FFFFFF"/>
-		<GridView android:id="@+id/gridViewMenuModify"
-			android:layout_height="wrap_content"
-			android:layout_width="wrap_content"
-			android:columnWidth="80dp"
-			android:numColumns="auto_fit"
-			android:verticalSpacing="4dp"
-			android:horizontalSpacing="4dp"
-			android:stretchMode="columnWidth"
-		android:gravity="center"
-		android:layout_gravity="center"/>
-			<ListView  
-		android:id="@+id/listviewMenuCategory"  
-		android:layout_width="300dp"  
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:layout_margin="60dp">
+	<TextView android:text="POStal"
+        android:layout_width="wrap_content"
+        android:layout_height="72dp"
+		android:textSize="45dip"
+		android:id="@+id/postalTextView"
+		android:textColor="@color/white"
+		android:layout_centerHorizontal="true"/>
+	<Button android:id="@+id/buttonAddMenuItem"
+		android:layout_width="300dp"
 		android:layout_height="wrap_content"
-		android:layout_centerInParent="true"
-		android:layout_gravity="center">   
-	</ListView>
-
-    </LinearLayout>
+		android:layout_marginTop="24dp"
+		android:layout_marginBottom="24dp"
+		android:padding="12dp"
+		android:text="@string/add_menu_item_button_text"
+		android:layout_below="@id/postalTextView"
+		android:layout_centerHorizontal="true"
+		android:background="@drawable/transparent_bg_bordered_button"
+		android:textColor="@color/white"/>
+	<TextView android:id="@+id/textviewChooseCategory"
+		android:text="Choose a category"
+	    android:layout_width="wrap_content"
+	    android:layout_height="32dp"
+	    android:layout_marginBottom="10dp"
+	    android:layout_gravity="center_horizontal"
+		android:textSize="22dip"
+		android:textColor="#FFFFFF"
+		android:layout_below="@id/buttonAddMenuItem"
+		android:layout_centerHorizontal="true"/>
+	<Spinner android:id = "@+id/spinnerMenuCategories"
+		android:gravity="center"
+		android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+		android:layout_below="@id/textviewChooseCategory"
+		android:layout_centerHorizontal="true"/>
+	<GridView  
+		android:id="@+id/gridViewMenuItems"  
+		android:layout_width="500dp"  
+		android:layout_height="wrap_content"
+		android:padding="10dp"
+		android:columnWidth="80dp"
+		android:numColumns="auto_fit"
+		android:verticalSpacing="4dp"
+		android:horizontalSpacing="4dp"
+		android:stretchMode="columnWidth"
+		android:layout_below="@id/spinnerMenuCategories"
+		android:layout_centerHorizontal="true"/>
+</RelativeLayout>

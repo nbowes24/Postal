@@ -9,30 +9,31 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="56dp"
+        android:paddingTop="60dp"
         android:paddingLeft="24dp"
         android:paddingRight="24dp">
 
         <TextView android:text="POStal"
             android:layout_width="wrap_content"
             android:layout_height="72dp"
-            android:layout_marginBottom="80dp"
+            android:layout_marginBottom="60dp"
             android:layout_gravity="center_horizontal"
-			android:textSize="45dip"/>
-
-
-        <!-- Password Label -->
+			android:textSize="45dip"
+			android:textColor="@color/white"/>
 			<EditText android:id="@+id/editTextCategoryText"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:inputType="text"
-				android:layout_gravity="center"/>
+				android:layout_gravity="center"
+				android:backgroundTint="@color/white"
+				android:textColor="@color/white"/>
 			<EditText android:id="@+id/editTextCategoryOrder"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:inputType="text"
-				android:layout_gravity="center"/>
-
+				android:layout_gravity="center"
+				android:backgroundTint="@color/white"
+				android:textColor="@color/white"/>
 		    <Button android:id="@+id/buttonCategoryModifySave"
 				android:layout_width="300dp"
 				android:layout_height="wrap_content"
@@ -41,7 +42,9 @@
 				android:padding="12dp"
 				android:onClick="Save"
 				android:text="@string/staff_save_button_text"
-				android:layout_gravity="center"/>
+				android:layout_gravity="center"
+				android:background="@drawable/transparent_bg_bordered_button"
+				android:textColor="@color/white"/>
 			<Button android:id="@+id/buttonCategoryModifyDelete"
 				android:layout_width="300dp"
 				android:layout_height="wrap_content"
@@ -49,8 +52,9 @@
 				android:layout_marginBottom="24dp"
 				android:padding="12dp"
 				android:onClick="Save"
-				android:text="@string/staff_delete_button_text"
-				android:layout_gravity="center"/>
-
+				android:text="@string/delete_button_text"
+				android:layout_gravity="center"
+				android:background="@drawable/transparent_bg_bordered_button"
+				android:textColor="@color/white"/>
     </LinearLayout>
 </ScrollView>

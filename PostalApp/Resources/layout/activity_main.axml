@@ -9,7 +9,7 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="56dp"
+        android:paddingTop="60dp"
         android:paddingLeft="24dp"
         android:paddingRight="24dp">
 
@@ -27,7 +27,9 @@
                 android:layout_height="wrap_content"
                 android:inputType="numberPassword"
                 android:hint="Pin"
-				android:layout_gravity="center"/>
+				android:layout_gravity="center"
+				android:textColor="@color/white"
+				android:backgroundTint="@color/white"/>
 
 		    <Button android:id="@+id/buttonLogin"
 				android:layout_width="300dp"
@@ -37,7 +39,9 @@
 				android:padding="12dp"
 				android:onClick="Login"
 				android:text="@string/login_button_text"
-				android:layout_gravity="center"/>
+				android:layout_gravity="center"
+				android:background="@drawable/transparent_bg_bordered_button"
+				android:textColor="@color/white"/>
 
     </LinearLayout>
 </ScrollView>

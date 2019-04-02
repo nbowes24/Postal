@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="56dp"
+        android:paddingLeft="24dp"
+        android:paddingRight="24dp"
+		android:background = "#4587ff"
+		android:gravity="center"
+		>
+
+        <TextView android:text="POStal"
+            android:layout_width="wrap_content"
+            android:layout_height="72dp"
+            android:layout_marginBottom="10dp"
+            android:layout_gravity="center_horizontal"
+			android:textSize="45dip"
+			android:textColor="#FFFFFF"/>
+		<TextView android:text="Choose a category"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_marginBottom="10dp"
+            android:layout_gravity="center_horizontal"
+			android:textSize="22dip"
+			android:textColor="#FFFFFF"/>
+		<Spinner android:id = "@+id/spinnerMenuCategories"
+			android:gravity="center"
+			android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+		<GridView  
+			android:id="@+id/gridViewMenuItems"  
+			android:layout_width="fill_parent"  
+			android:layout_height="wrap_content"
+			android:padding="10dp"
+			android:columnWidth="80dp"
+			android:numColumns="auto_fit"
+			android:verticalSpacing="4dp"
+			android:horizontalSpacing="4dp"
+			android:stretchMode="columnWidth"
+			android:gravity="center"
+			android:layout_gravity="center_horizontal"/>
+		<ListView
+		    android:id="@+id/rightListView"
+		    android:layout_width="0dp"
+		    android:layout_height="match_parent"
+		    android:layout_margin="2dp"
+		    android:layout_weight=".25" 
+			android:entries="@array/sports_array"/>
+
+</LinearLayout>

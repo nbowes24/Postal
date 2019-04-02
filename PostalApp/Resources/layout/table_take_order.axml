@@ -7,22 +7,22 @@
 	<TextView android:text="POStal"
 		android:layout_width="wrap_content"
 		android:layout_height="72dp"
-		android:layout_marginTop="30dp"
+		android:layout_marginTop="60dp"
 		android:layout_gravity="center_horizontal"
 		android:textSize="45dip"
 		android:textColor="@color/white"/>
 	<TextView  
-		android:id="@+id/textviewCloseTable"  
+		android:id="@+id/textviewAddTable"  
 		android:layout_width="wrap_content"  
 		android:layout_height="wrap_content"   
 		android:textSize="30dp"  
 		android:paddingTop="20dp"
 		android:textColor="#FFFFFF"  
-		android:text="@string/textview_close_table"
+		android:text="@string/textview_select_table"
 		android:layout_gravity="center_horizontal"
 	/>  
 	<ListView  
-		android:id="@+id/listviewCloseTable"  
+		android:id="@+id/listviewStartTable"  
 		android:layout_width="300dp"  
 		android:layout_height="wrap_content"
 		android:layout_centerInParent="true"

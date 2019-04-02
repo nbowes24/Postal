@@ -20,7 +20,7 @@ using PostalApp.Data;
 namespace PostalApp
 {
     [Activity(Theme = "@style/AppTheme")]
-    public class StartTable : Activity
+    public class TakeOrderTable : Activity
     {
         private ListView listviewStartTable;
         private List<Table> tableList = new List<Table>();
@@ -33,7 +33,7 @@ namespace PostalApp
 
             UserDialogs.Init(this);
             // Set our view from the "main" layout resource
-            SetContentView(Resource.Layout.start_table);
+            SetContentView(Resource.Layout.table_take_order);
 
             listviewStartTable = FindViewById<ListView>(Resource.Id.listviewStartTable);
 
@@ -48,7 +48,7 @@ namespace PostalApp
             tableList = await tableService.RefreshDataAsync();
 
             tableList = (from Table t in tableList
-                                    where t.StaffId == null
+                                    where t.StaffId != null
                                     select t).ToList();
             
             adapter = new TableAdapter(this, tableList);
@@ -58,52 +58,23 @@ namespace PostalApp
         private void TableListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
             var table = tableList[e.Position].Id;
-            AssignTable(e);
+            OrderTable(e);
         }
 
-        private async void AssignTable(AdapterView.ItemClickEventArgs e)
+        private async void OrderTable(AdapterView.ItemClickEventArgs e)
         {
             var result = await UserDialogs.Instance.ConfirmAsync(new ConfirmConfig()
-                .SetTitle($"Start Table Number {tableList[e.Position].TableNumber}?")
+                .SetTitle($"Take Order for Table: {tableList[e.Position].TableNumber}?")
                 .SetOkText("Okay")
                 .SetCancelText("Cancel"));
 
             if (result)
             {
-
-                var table = new Table()
-                {
-                    Id = tableList[e.Position].Id,
-                    TableNumber = tableList[e.Position].TableNumber,
-                    StaffId = Intent.GetIntExtra("StaffId", 1)
-                };
-
-                await tableService.SaveTableItemAsync(table, false);
-
-                GetTables();
-            }
-        }
-
-        private async void DeleteTable(AdapterView.ItemClickEventArgs e)
-        {
-            var result = await UserDialogs.Instance.ConfirmAsync(new ConfirmConfig()
-                .SetTitle($"Delete table: {tableList[e.Position].TableNumber}")
-                .SetOkText("Delete")
-                .SetCancelText("Cancel"));
-
-            if (result)
-            {
-                HttpClient client = new HttpClient();
-                HttpResponseMessage response = new HttpResponseMessage();
-                string url = $"https://postalwebapi.azurewebsites.net/api/TableNums/{tableList[e.Position].Id}";
-                var uri = new Uri(url);
-
-                response = await client.DeleteAsync(uri);
-
-                if (response.IsSuccessStatusCode)
-                {
-                    GetTables();
-                }
+                Intent intent = new Intent(this, typeof(TakeOrder));
+                intent.PutExtra("TableId", tableList[e.Position].Id);
+                intent.PutExtra("StaffId", Intent.GetIntExtra("StaffId", 1));
+                StartActivity(intent);
+                Finish();
             }
         }
     }

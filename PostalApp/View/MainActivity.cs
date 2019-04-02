@@ -13,6 +13,7 @@ using System.Threading.Tasks;
 using Java.Lang;
 using Android.Content;
 using Acr.UserDialogs;
+using PostalApp.Data;
 
 namespace PostalApp
 {
@@ -21,6 +22,7 @@ namespace PostalApp
     {
         private Button btnLogin;
         private EditText editPin;
+        private StaffService staffService = new StaffService();
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -62,6 +64,8 @@ namespace PostalApp
             Staff staff = null;
             HttpClient client = new HttpClient();
             string url = $"https://postalwebapi.azurewebsites.net/api/Staffs/{pin}";
+
+            var staffT = await staffService.RefreshDataAsync();
             var uri = new Uri(url);
             var result = await client.GetAsync(url);
             var json = await result.Content.ReadAsStringAsync();

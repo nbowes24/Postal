@@ -56,6 +56,10 @@
     <Reference Include="Mono.Android" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\ITableOrderService.cs" />
+    <Compile Include="Data\IOrderItemService.cs" />
+    <Compile Include="Data\TableOrderService.cs" />
+    <Compile Include="Data\OrderItemService.cs" />
     <Compile Include="Data\MenuService.cs" />
     <Compile Include="Data\IMenuService.cs" />
     <Compile Include="Data\ICategoryService.cs" />
@@ -65,6 +69,10 @@
     <Compile Include="Data\StaffService.cs" />
     <Compile Include="Data\TableService.cs" />
     <Compile Include="Model\Category.cs" />
+    <Compile Include="Model\TableOrderGridAdapter.cs" />
+    <Compile Include="Model\TableOrder.cs" />
+    <Compile Include="Model\OrderItem.cs" />
+    <Compile Include="Model\MenuGridAdapter.cs" />
     <Compile Include="Model\CategoryGridAdapter.cs" />
     <Compile Include="Model\MenuAdapater.cs" />
     <Compile Include="Model\Menu.cs" />
@@ -72,11 +80,16 @@
     <Compile Include="Model\TableAdapter.cs" />
     <Compile Include="Model\Table.cs" />
     <Compile Include="View\CategoryPage.cs" />
+    <Compile Include="View\MenuEdit.cs" />
+    <Compile Include="View\ViewOrder.cs" />
+    <Compile Include="View\TakeOrderTable.cs" />
+    <Compile Include="View\TakeOrder.cs" />
     <Compile Include="View\ModifyMenu.cs" />
     <Compile Include="View\AdminCategories.cs" />
     <Compile Include="View\CloseTable.cs" />
     <Compile Include="View\CategoriesEdit.cs" />
     <Compile Include="View\CategoriesAdd.cs" />
+    <Compile Include="View\MenuAdd.cs" />
     <Compile Include="View\StartTable.cs" />
     <Compile Include="View\ModifyTable.cs" />
     <Compile Include="View\StaffAdd.cs" />
@@ -247,6 +260,47 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\list_view_menu_category.axml">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\admin_menu_add.axml">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\admin_menu_edit.axml">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\staff_take_order.axml">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\take_order.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\table_take_order.axml">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\transparent_bg_bordered.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\transparent_bg_bordered_button.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\view_orders.axml">
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
       <SubType>Designer</SubType>
     </AndroidResource>

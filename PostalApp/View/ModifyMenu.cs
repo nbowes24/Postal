@@ -22,16 +22,15 @@ namespace PostalApp
     [Activity(Theme = "@style/AppTheme")]
     public class ModifyMenu : Activity
     {
-        private GridView gridViewMenuModify;
-        private Button btnAddCategory;
         private List<Category> categoryList = new List<Category>();
         private List<Model.Menu> menuList = new List<Model.Menu>();
-        private MenuAdapter adapter;
+        private MenuGridAdapter menuGridAdapter;
         private CategoryService categoryService = new CategoryService();
-        private LinearLayout linearLayoutAdminModifyMenu;
         private MenuService menuService = new MenuService();
-        private CategoryGridAdapter categoryGridAdapter;
-        private ListView listviewMenuCategory;
+        private CategoryAdapter categoryAdapter;
+        private GridView gridViewMenuItems;
+        private Button btnAddMenuItem;
+        private Spinner spinnerMenuCategories;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -40,41 +39,33 @@ namespace PostalApp
             // Set our view from the "main" layout resource
             
             SetContentView(Resource.Layout.admin_menu_modify);
-
-            //linearLayoutAdminModifyMenu = FindViewById<LinearLayout>(Resource.Id.linearLayout2);
-            gridViewMenuModify = FindViewById<GridView>(Resource.Id.gridViewMenuModify);
-            listviewMenuCategory = FindViewById<ListView>(Resource.Id.listviewMenuCategory);
+            gridViewMenuItems = FindViewById<GridView>(Resource.Id.gridViewMenuItems);
+            btnAddMenuItem = FindViewById<Button>(Resource.Id.buttonAddMenuItem);
+            spinnerMenuCategories = FindViewById<Spinner>(Resource.Id.spinnerMenuCategories);
 
 
 
             GetCategories();
+            
 
-            gridViewMenuModify.ItemClick += GridViewMenuModify_ItemClick;
+            spinnerMenuCategories.ItemSelected += SpinnerMenuCategories_ItemSelected;
 
-
-
-            //listviewCategory = FindViewById<ListView>(Resource.Id.listviewCategory);
-            //btnAddCategory = FindViewById<Button>(Resource.Id.buttonAddCategory);
-
-            //GetCategories();
-
-            //listviewCategory.ItemClick += TableListView_ItemClick;
-
-            //btnAddCategory.Click += delegate
-            //{
-            //    AddCategory();
-            //};
+            btnAddMenuItem.Click += delegate
+            {
+                AddMenuItemActivity();
+            };
 
         }
 
-        private void GridViewMenuModify_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
+        private void SpinnerMenuCategories_ItemSelected(object sender, AdapterView.ItemSelectedEventArgs e)
         {
             GetMenu(categoryList[e.Position].Id);
         }
 
-        private void TableListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
+        private void AddMenuItemActivity()
         {
-            EditCategory(e);
+            Intent intent = new Intent(this, typeof(MenuAdd));
+            StartActivityForResult(intent, 0);
         }
 
         private async void GetCategories()
@@ -83,17 +74,10 @@ namespace PostalApp
 
             categoryList = categoryList.OrderBy(x => x.DisplayOrder).ToList();
 
-            categoryGridAdapter = new CategoryGridAdapter(this, categoryList);
-            gridViewMenuModify.Adapter = categoryGridAdapter;
 
-            //foreach (Category category in categoryList)
-            //{
-            //    var button = new Button(this);
-            //    button.Text = category.CategoryText;
-            //    button.Id = category.Id;
-            //    button.Click += (sender, e) => GetMenu(category.Id);
-            //    linearLayoutAdminModifyMenu.AddView(button);
-            //}
+
+            categoryAdapter = new CategoryAdapter(this, categoryList);
+            spinnerMenuCategories.Adapter = categoryAdapter;
         }
 
         public async void GetMenu(int Id)
@@ -102,16 +86,19 @@ namespace PostalApp
 
             menuList = menuList.Where(x => x.CategoryId == Id).ToList();
 
-            adapter = new MenuAdapter(this, menuList);
-            listviewMenuCategory.Adapter = adapter;
+            menuGridAdapter = new MenuGridAdapter(this, menuList);
+            gridViewMenuItems.Adapter = menuGridAdapter;
+            
         }
 
-        private void EditCategory(AdapterView.ItemClickEventArgs e)
+        public void EditMenu(Model.Menu menu)
         {
-            Intent intent = new Intent(this, typeof(CategoriesEdit));
-            intent.PutExtra("Id", categoryList[e.Position].Id);
-            intent.PutExtra("CategoryText", categoryList[e.Position].CategoryText);
-            intent.PutExtra("DisplayOrder", categoryList[e.Position].DisplayOrder);
+            Intent intent = new Intent(this, typeof(MenuEdit));
+            intent.PutExtra("Id", menu.Id);
+            intent.PutExtra("FoodDescription", menu.FoodDescription);
+            intent.PutExtra("Price", string.Format("{0:N2}", menu.Price));
+            intent.PutExtra("Available", menu.Available);
+            intent.PutExtra("CategoryId", menu.CategoryId);
             StartActivityForResult(intent, 0);
         }
 

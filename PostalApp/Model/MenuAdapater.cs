@@ -53,7 +53,7 @@ namespace PostalApp.Model
                     row = LayoutInflater.From(sContext).Inflate(Resource.Layout.list_view_menu_category, null);
                 }
                 TextView txtName = row.FindViewById<TextView>(Resource.Id.textviewMenuCategoryItem);
-                txtName.Text = menuList[position].FoodDescription;
+                txtName.Text = menuList[position].FoodDescription + " " + string.Format("{0:N2}", menuList[position].Price);
                 
             }
             catch (Exception e)
