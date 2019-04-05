@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
-
+using Acr.UserDialogs;
 using Android.App;
 using Android.Content;
 using Android.OS;
@@ -34,6 +34,7 @@ namespace PostalApp
             base.OnCreate(savedInstanceState);
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.admin_menu_add);
+            UserDialogs.Init(this);
 
             buttonMenuAdd = FindViewById<Button>(Resource.Id.buttonMenuAdd);
             spinnerMenuCategoriesAdd = FindViewById<Spinner>(Resource.Id.spinnerMenuCategoriesAdd);
@@ -61,20 +62,37 @@ namespace PostalApp
 
         private async void AddMenuItem()
         {
-            var menu = new Model.Menu()
+            if(ValidateInputs())
             {
-                FoodDescription = editTextAddMenuDescription.Text,
-                Price = Decimal.Parse(editTextAddMenuPrice.Text),
-                Available = checkBoxMenuAvailability.Checked,
-                CategoryId = categoryList[spinnerMenuCategoriesAdd.SelectedItemPosition].Id
-            };
+                var menu = new Model.Menu()
+                {
+                    FoodDescription = editTextAddMenuDescription.Text,
+                    Price = Decimal.Parse(editTextAddMenuPrice.Text),
+                    Available = checkBoxMenuAvailability.Checked,
+                    CategoryId = categoryList[spinnerMenuCategoriesAdd.SelectedItemPosition].Id
+                };
 
-            await menuService.SaveTableItemAsync(menu, true);
+                await menuService.SaveTableItemAsync(menu, true);
 
-            Intent returnIntent = new Intent();
-            SetResult(Result.Ok);
+                Intent returnIntent = new Intent();
+                SetResult(Result.Ok);
 
-            Finish();
+                Finish();
+            }
+            else
+            {
+                UserDialogs.Instance.Alert("Please enter the menu details");
+            }
+
+        }
+
+        private bool ValidateInputs()
+        {
+            if (editTextAddMenuDescription.Text == "" || editTextAddMenuPrice.Text == "")
+            {
+                return false;
+            }
+            return true;
         }
     }
 }

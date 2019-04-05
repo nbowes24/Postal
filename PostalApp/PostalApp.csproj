@@ -79,29 +79,28 @@
     <Compile Include="Model\CategoryAdapter.cs" />
     <Compile Include="Model\TableAdapter.cs" />
     <Compile Include="Model\Table.cs" />
-    <Compile Include="View\CategoryPage.cs" />
-    <Compile Include="View\MenuEdit.cs" />
-    <Compile Include="View\ViewOrder.cs" />
-    <Compile Include="View\TakeOrderTable.cs" />
-    <Compile Include="View\TakeOrder.cs" />
-    <Compile Include="View\ModifyMenu.cs" />
-    <Compile Include="View\AdminCategories.cs" />
-    <Compile Include="View\CloseTable.cs" />
-    <Compile Include="View\CategoriesEdit.cs" />
-    <Compile Include="View\CategoriesAdd.cs" />
-    <Compile Include="View\MenuAdd.cs" />
-    <Compile Include="View\StartTable.cs" />
-    <Compile Include="View\ModifyTable.cs" />
-    <Compile Include="View\StaffAdd.cs" />
-    <Compile Include="View\Menu.cs" />
-    <Compile Include="View\MainActivity.cs" />
+    <Compile Include="ViewController\MenuEdit.cs" />
+    <Compile Include="ViewController\ViewOrder.cs" />
+    <Compile Include="ViewController\TakeOrderTable.cs" />
+    <Compile Include="ViewController\TakeOrder.cs" />
+    <Compile Include="ViewController\ModifyMenu.cs" />
+    <Compile Include="ViewController\AdminCategories.cs" />
+    <Compile Include="ViewController\CloseTable.cs" />
+    <Compile Include="ViewController\CategoriesEdit.cs" />
+    <Compile Include="ViewController\CategoriesAdd.cs" />
+    <Compile Include="ViewController\MenuAdd.cs" />
+    <Compile Include="ViewController\StartTable.cs" />
+    <Compile Include="ViewController\ModifyTable.cs" />
+    <Compile Include="ViewController\StaffAdd.cs" />
+    <Compile Include="ViewController\Menu.cs" />
+    <Compile Include="ViewController\MainActivity.cs" />
     <Compile Include="Model\Staff.cs" />
-    <Compile Include="View\AdminMenu.cs" />
+    <Compile Include="ViewController\AdminMenu.cs" />
     <Compile Include="Model\StaffAdapter.cs" />
-    <Compile Include="View\ModifyStaff.cs" />
+    <Compile Include="ViewController\ModifyStaff.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="View\StaffEdit.cs" />
+    <Compile Include="ViewController\StaffEdit.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -171,7 +170,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Activities\" />
-    <Folder Include="ViewModel\" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\admin_menu.axml">

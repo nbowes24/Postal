@@ -24,6 +24,7 @@ namespace PostalApp
         private EditText editTextStaffLastName;
         private EditText editTextStaffPin;
         private int staffId;
+        private bool adminFlag;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -43,6 +44,8 @@ namespace PostalApp
             editTextStaffFirstName.Text = Intent.GetStringExtra("FirstName");
             editTextStaffLastName.Text = Intent.GetStringExtra("LastName");
             editTextStaffPin.Text = Intent.GetIntExtra("Pin", 0).ToString();
+            adminFlag = Intent.GetBooleanExtra("AdminFlag", false);
+
 
             btnStaffModifySave.Click += delegate
             {
@@ -58,33 +61,41 @@ namespace PostalApp
 
         private async void EditAccount()
         {
-            HttpClient client = new HttpClient();
-            HttpResponseMessage response = new HttpResponseMessage();
-            string url = $"https://postalwebapi.azurewebsites.net/api/Staffs/{staffId}";
-            var uri = new Uri(url);
-
-            var staff = new Staff()
+            if(ValidateInputs())
             {
-                Id = staffId,
-                FirstName = editTextStaffFirstName.Text,
-                LastName = editTextStaffLastName.Text,
-                Pin = Int32.Parse(editTextStaffPin.Text)
-            };
+                HttpClient client = new HttpClient();
+                HttpResponseMessage response = new HttpResponseMessage();
+                string url = $"https://postalwebapi.azurewebsites.net/api/Staffs/{staffId}";
+                var uri = new Uri(url);
 
-            var json = JsonConvert.SerializeObject(staff);
+                var staff = new Staff()
+                {
+                    Id = staffId,
+                    FirstName = editTextStaffFirstName.Text,
+                    LastName = editTextStaffLastName.Text,
+                    Pin = Int32.Parse(editTextStaffPin.Text),
+                    AdminFlag = adminFlag
+                };
 
-            var content = new StringContent(json, Encoding.UTF8, "application/json");
+                var json = JsonConvert.SerializeObject(staff);
 
-            response = await client.PutAsync(uri, content);
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
 
-            Intent returnIntent = new Intent();
+                response = await client.PutAsync(uri, content);
 
-            if (response.IsSuccessStatusCode)
-            {
-                SetResult(Result.Ok, returnIntent);
+                Intent returnIntent = new Intent();
+
+                if (response.IsSuccessStatusCode)
+                {
+                    SetResult(Result.Ok, returnIntent);
+                }
+
+                Finish();
             }
-
-            Finish();
+            else
+            {
+                UserDialogs.Instance.Alert("Please enter the staff details");
+            }
         }
 
         private async void DeleteAccount()
@@ -114,22 +125,13 @@ namespace PostalApp
             }
         }
 
-        private void ShowConfirmDialog()
+        private bool ValidateInputs()
         {
-            AlertDialog.Builder builder = new AlertDialog.Builder(this);
-
-            builder.SetTitle("Confirm Delete");
-            builder.SetMessage("Are you sure you want to delete: " + editTextStaffFirstName.Text);
-            builder.SetPositiveButton("YES", delegate
+            if (editTextStaffFirstName.Text == "" || editTextStaffLastName.Text == "" || editTextStaffPin.Text == "")
             {
-                DeleteAccount();
-            });
-            builder.SetNegativeButton("NO", delegate
-            {
-
-            });
-
-            builder.Show();
+                return false;
+            }
+            return true;
         }
 
     }

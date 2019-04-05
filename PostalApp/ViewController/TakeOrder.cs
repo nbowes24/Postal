@@ -58,7 +58,6 @@ namespace PostalApp
 
             GetCategories();
             
-
             spinnerMenuCategories.ItemSelected += SpinnerMenuCategories_ItemSelected;
 
             listviewOrderItems.ItemClick += listviewOrderItems_ItemClick;
@@ -77,8 +76,8 @@ namespace PostalApp
         private async void RemoveItemAsync(AdapterView.ItemClickEventArgs e)
         {
             var result = await UserDialogs.Instance.ConfirmAsync(new ConfirmConfig()
-                .SetTitle($"Delete item: {orderList[e.Position].FoodDescription}")
-                .SetOkText("Delete")
+                .SetTitle($"Remove item: {orderList[e.Position].FoodDescription}")
+                .SetOkText("Remove")
                 .SetCancelText("Cancel"));
 
             if (result)

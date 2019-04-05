@@ -36,6 +36,7 @@ namespace PostalApp
             base.OnCreate(savedInstanceState);
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.admin_menu_edit);
+            UserDialogs.Init(this);
 
             buttonMenuEditSave = FindViewById<Button>(Resource.Id.buttonMenuEditSave);
             spinnerMenuCategoriesEdit = FindViewById<Spinner>(Resource.Id.spinnerMenuCategoriesEdit);
@@ -77,21 +78,38 @@ namespace PostalApp
 
         private async void EditMenuItem()
         {
-            var menu = new Model.Menu()
+            if (ValidateInputs())
             {
-                Id = menuId,
-                FoodDescription = editTextEditMenuDescription.Text,
-                Price = Decimal.Parse(editTextEditMenuPrice.Text),
-                Available = checkBoxMenuAvailabilityEdit.Checked,
-                CategoryId = categoryList[spinnerMenuCategoriesEdit.SelectedItemPosition].Id
-            };
+                var menu = new Model.Menu()
+                {
+                    Id = menuId,
+                    FoodDescription = editTextEditMenuDescription.Text,
+                    Price = Decimal.Parse(editTextEditMenuPrice.Text),
+                    Available = checkBoxMenuAvailabilityEdit.Checked,
+                    CategoryId = categoryList[spinnerMenuCategoriesEdit.SelectedItemPosition].Id
+                };
 
-            await menuService.SaveTableItemAsync(menu, false);
+                await menuService.SaveTableItemAsync(menu, false);
 
-            Intent returnIntent = new Intent();
-            SetResult(Result.Ok, returnIntent);
+                Intent returnIntent = new Intent();
+                SetResult(Result.Ok, returnIntent);
 
-            Finish();
+                Finish();
+            }
+            else
+            {
+                UserDialogs.Instance.Alert("Please enter the menu details");
+            }
+
+        }
+
+        private bool ValidateInputs()
+        {
+            if (editTextEditMenuDescription.Text == "" || editTextEditMenuPrice.Text == "")
+            {
+                return false;
+            }
+            return true;
         }
     }
 }

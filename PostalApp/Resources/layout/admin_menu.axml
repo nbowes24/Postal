@@ -60,17 +60,6 @@
 				android:text="@string/accounts_button_text"
 				android:background="@drawable/transparent_bg_bordered_button"
 				android:textColor="@color/white"/>
-			<Button android:id="@+id/buttonReports"
-				android:layout_width="300dp"
-				android:layout_height="wrap_content"
-				android:layout_marginTop="24dp"
-				android:layout_marginBottom="12dp"
-				android:layout_gravity="center"
-				android:padding="12dp"
-				android:onClick="Login"
-				android:text="@string/reports_button_text" 
-				android:background="@drawable/transparent_bg_bordered_button"
-				android:textColor="@color/white"/>
 			<Button android:id="@+id/buttonTables"
 				android:layout_width="300dp"
 				android:layout_height="wrap_content"

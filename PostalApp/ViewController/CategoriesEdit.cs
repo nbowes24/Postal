@@ -31,7 +31,6 @@ namespace PostalApp
             base.OnCreate(savedInstanceState);
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.admin_categories_modify);
-
             UserDialogs.Init(this);
 
             btnCategoryModifySave = FindViewById<Button>(Resource.Id.buttonCategoryModifySave);
@@ -57,31 +56,28 @@ namespace PostalApp
 
         private async void EditCategory()
         {
-            //HttpClient client = new HttpClient();
-            //HttpResponseMessage response = new HttpResponseMessage();
-            //string url = $"https://postalwebapi.azurewebsites.net/api/Categories/{categoryId}";
-            //var uri = new Uri(url);
-
-            var category = new Category()
+            if(ValidateInputs())
             {
-                Id = categoryId,
-                CategoryText = editTextCategoryText.Text,
-                DisplayOrder = Int32.Parse(editTextCategoryOrder.Text),
-            };
+                var category = new Category()
+                {
+                    Id = categoryId,
+                    CategoryText = editTextCategoryText.Text,
+                    DisplayOrder = Int32.Parse(editTextCategoryOrder.Text),
+                };
 
-            await categoryService.SaveTableItemAsync(category, false);
+                await categoryService.SaveTableItemAsync(category, false);
 
-            //var json = JsonConvert.SerializeObject(category);
+                Intent returnIntent = new Intent();
 
-            //var content = new StringContent(json, Encoding.UTF8, "application/json");
+                SetResult(Result.Ok, returnIntent);
 
-            //response = await client.PutAsync(uri, content);
+                Finish();
+            }
+            else
+            {
+                UserDialogs.Instance.Alert("Please enter the category details");
+            }
 
-            Intent returnIntent = new Intent();
-
-            SetResult(Result.Ok, returnIntent);
-
-            Finish();
         }
 
         private async void DeleteCategory()
@@ -103,5 +99,13 @@ namespace PostalApp
             }
         }
 
+        private bool ValidateInputs()
+        {
+            if (editTextCategoryText.Text == "" || editTextCategoryOrder.Text == "")
+            {
+                return false;
+            }
+            return true;
+        }
     }
 }

@@ -7,7 +7,7 @@
 	<TextView android:text="POStal"
 		android:layout_width="wrap_content"
 		android:layout_height="72dp"
-		android:layout_marginTop="30dp"
+		android:layout_marginTop="60dp"
 		android:layout_gravity="center_horizontal"
 		android:textSize="45dip"
 		android:textColor="@color/white"/>

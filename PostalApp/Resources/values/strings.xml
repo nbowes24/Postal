@@ -30,13 +30,4 @@
     <string name="admin_menu_availabilty_checkbox">Availability</string>
     <string name="submit_order_button_text">Submit</string>
     <string name="textview_select_table">Select a table</string>
-  <string-array name="sports_array">
-    <item>Shuttle Badminton</item>
-    <item>Tennis</item>
-    <item>FootBall</item>
-    <item>Basket Ball</item>
-    <item>Table Tennis</item>
-    <item>Chess</item>
-    <item>Hockey</item>
-  </string-array>
 </resources>

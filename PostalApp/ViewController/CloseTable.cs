@@ -20,9 +20,9 @@ using PostalApp.Data;
 namespace PostalApp
 {
     [Activity(Theme = "@style/AppTheme")]
-    public class StartTable : Activity
+    public class CloseTable : Activity
     {
-        private ListView listviewStartTable;
+        private ListView listviewCloseTable;
         private List<Table> tableList = new List<Table>();
         private TableAdapter adapter;
         private TableService tableService = new TableService();
@@ -33,13 +33,13 @@ namespace PostalApp
 
             UserDialogs.Init(this);
             // Set our view from the "main" layout resource
-            SetContentView(Resource.Layout.start_table);
+            SetContentView(Resource.Layout.close_table);
 
-            listviewStartTable = FindViewById<ListView>(Resource.Id.listviewStartTable);
+            listviewCloseTable = FindViewById<ListView>(Resource.Id.listviewCloseTable);
 
             GetTables();
 
-            listviewStartTable.ItemClick += TableListView_ItemClick;
+            listviewCloseTable.ItemClick += TableListView_ItemClick;
 
         }
 
@@ -47,12 +47,23 @@ namespace PostalApp
         {
             tableList = await tableService.RefreshDataAsync();
 
-            tableList = (from Table t in tableList
-                                    where t.StaffId == null
-                                    select t).ToList();
+            if(Intent.GetBooleanExtra("AdminFlag", false))
+            {
+                tableList = (from Table t in tableList
+                             where t.StaffId != null
+                             select t).ToList();
+            }
+            else
+            {
+                tableList = (from Table t in tableList
+                             where t.StaffId == Intent.GetIntExtra("StaffId", 1)
+                             select t).ToList();
+            }
+
+            
             
             adapter = new TableAdapter(this, tableList);
-            listviewStartTable.Adapter = adapter;
+            listviewCloseTable.Adapter = adapter;
         }
 
         private void TableListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
@@ -64,7 +75,7 @@ namespace PostalApp
         private async void AssignTable(AdapterView.ItemClickEventArgs e)
         {
             var result = await UserDialogs.Instance.ConfirmAsync(new ConfirmConfig()
-                .SetTitle($"Start Table Number {tableList[e.Position].TableNumber}?")
+                .SetTitle($"Close Table Number {tableList[e.Position].TableNumber}?")
                 .SetOkText("Okay")
                 .SetCancelText("Cancel"));
 
@@ -75,7 +86,7 @@ namespace PostalApp
                 {
                     Id = tableList[e.Position].Id,
                     TableNumber = tableList[e.Position].TableNumber,
-                    StaffId = Intent.GetIntExtra("StaffId", 1)
+                    StaffId = null
                 };
 
                 await tableService.SaveTableItemAsync(table, false);
@@ -83,28 +94,6 @@ namespace PostalApp
                 GetTables();
             }
         }
-
-        private async void DeleteTable(AdapterView.ItemClickEventArgs e)
-        {
-            var result = await UserDialogs.Instance.ConfirmAsync(new ConfirmConfig()
-                .SetTitle($"Delete table: {tableList[e.Position].TableNumber}")
-                .SetOkText("Delete")
-                .SetCancelText("Cancel"));
-
-            if (result)
-            {
-                HttpClient client = new HttpClient();
-                HttpResponseMessage response = new HttpResponseMessage();
-                string url = $"https://postalwebapi.azurewebsites.net/api/TableNums/{tableList[e.Position].Id}";
-                var uri = new Uri(url);
-
-                response = await client.DeleteAsync(uri);
-
-                if (response.IsSuccessStatusCode)
-                {
-                    GetTables();
-                }
-            }
-        }
+        
     }
 }

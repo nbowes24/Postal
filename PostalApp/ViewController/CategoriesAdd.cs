@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
-
+using Acr.UserDialogs;
 using Android.App;
 using Android.Content;
 using Android.OS;
@@ -27,6 +27,7 @@ namespace PostalApp
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
+            UserDialogs.Init(this);
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.admin_category_add);
 
@@ -42,18 +43,35 @@ namespace PostalApp
 
         private async void AddCategory()
         {
-            var category = new Category()
+            if (ValidateInputs())
             {
-                CategoryText = editTextCategoryText.Text,
-                DisplayOrder = Int32.Parse(editTextCategoryOrder.Text)
-            };
+                var category = new Category()
+                {
+                    CategoryText = editTextCategoryText.Text,
+                    DisplayOrder = Int32.Parse(editTextCategoryOrder.Text)
+                };
 
-            await categoryService.SaveTableItemAsync(category, true);
+                await categoryService.SaveTableItemAsync(category, true);
 
-            Intent returnIntent = new Intent();
-            SetResult(Result.Ok, returnIntent);
+                Intent returnIntent = new Intent();
+                SetResult(Result.Ok, returnIntent);
 
-            Finish();
+                Finish();
+            }
+            else
+            {
+                UserDialogs.Instance.Alert("Please enter the category details");
+            }
+
+        }
+
+        private bool ValidateInputs()
+        {
+            if(editTextCategoryText.Text == "" || editTextCategoryOrder.Text == "")
+            {
+                return false;
+            }
+            return true;
         }
     }
 }

@@ -23,19 +23,14 @@ namespace PostalApp.Data
 
         public MenuService()
         {
-            //var authData = string.Format("{0}:{1}", Constants.Username, Constants.Password);
-            //var authHeaderValue = Convert.ToBase64String(Encoding.UTF8.GetBytes(authData));
-
             client = new HttpClient();
             client.MaxResponseContentBufferSize = 256000;
-            //client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", authHeaderValue);
         }
 
         public async Task<List<Model.Menu>> RefreshDataAsync()
         {
             Items = new List<Model.Menu>();
-
-            //RestUrl = https://postalwebapi.azurewebsites.net/api/TableNums
+            
             var uri = new Uri("https://postalwebapi.azurewebsites.net/api/Menus");
 
             try
@@ -49,7 +44,7 @@ namespace PostalApp.Data
             }
             catch (Exception ex)
             {
-                //Debug.WriteLine(@"				ERROR {0}", ex.Message);
+                
             }
 
             return Items;
@@ -57,9 +52,6 @@ namespace PostalApp.Data
 
         public async Task SaveTableItemAsync(Model.Menu item, bool isNewItem = false)
         {
-            // RestUrl = http://developer.xamarin.com:8081/api/todoitems
-            
-
             try
             {
                 var json = JsonConvert.SerializeObject(item);
@@ -79,19 +71,16 @@ namespace PostalApp.Data
 
                 if (response.IsSuccessStatusCode)
                 {
-                    //Debug.WriteLine(@"				TodoItem successfully saved.");
                 }
 
             }
             catch (Exception ex)
             {
-                //Debug.WriteLine(@"				ERROR {0}", ex.Message);
             }
         }
 
         public async Task DeleteTableItemAsync(string id)
         {
-            //RestUrl = http://developer.xamarin.com:8081/api/todoitems/{0}
             var uri = new Uri($"https://postalwebapi.azurewebsites.net/api/Menus/{id}");
 
             try
@@ -100,13 +89,11 @@ namespace PostalApp.Data
 
                 if (response.IsSuccessStatusCode)
                 {
-                    //Debug.WriteLine(@"				TodoItem successfully deleted.");
                 }
 
             }
             catch (Exception ex)
             {
-                //Debug.WriteLine(@"				ERROR {0}", ex.Message);
             }
         }
     }

@@ -61,7 +61,7 @@ namespace PostalApp.Model
                     drawable.SetColor(Color.Rgb(69, 135, 244));
 
                     button.SetBackgroundDrawable(drawable);
-                    button.Text = tableOrderList[position].OrderTime.ToShortTimeString();
+                    button.Text = $"Order#{tableOrderList[position].Id.ToString()} {System.Environment.NewLine} {tableOrderList[position].OrderTime.ToShortTimeString()}";
                     button.Click += delegate
                     {
                         (sContext as ViewOrder).ViewOrderDetails(tableOrderList[position]);

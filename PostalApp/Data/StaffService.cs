@@ -23,19 +23,14 @@ namespace PostalApp.Data
 
         public StaffService()
         {
-            //var authData = string.Format("{0}:{1}", Constants.Username, Constants.Password);
-            //var authHeaderValue = Convert.ToBase64String(Encoding.UTF8.GetBytes(authData));
-
             client = new HttpClient();
             client.MaxResponseContentBufferSize = 256000;
-            //client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", authHeaderValue);
         }
 
         public async Task<List<Staff>> RefreshDataAsync()
         {
             Items = new List<Staff>();
-
-            //RestUrl = https://postalwebapi.azurewebsites.net/api/TableNums
+            
             var uri = new Uri("https://postalwebapi.azurewebsites.net/api/Staffs");
 
             try
@@ -57,9 +52,6 @@ namespace PostalApp.Data
 
         public async Task SaveTableItemAsync(Staff item, bool isNewItem = false)
         {
-            // RestUrl = http://developer.xamarin.com:8081/api/todoitems
-            
-
             try
             {
                 var json = JsonConvert.SerializeObject(item);

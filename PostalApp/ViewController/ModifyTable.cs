@@ -70,16 +70,23 @@ namespace PostalApp
                 .SetInputMode(InputType.Number)
                 .SetMaxLength(10));
 
-            if (result.Ok)
+            if (result.Ok && result.Text != "")
             {
                 var table = new Table()
                 {
                     TableNumber = Int32.Parse(result.Text)
                 };
 
-                await tableService.SaveTableItemAsync(table, true);
+                if (CheckTableExists(table))
+                {
+                    UserDialogs.Instance.Alert($"Table number {table.TableNumber} already exists");
+                }
+                else
+                {
+                    await tableService.SaveTableItemAsync(table, true);
 
-                GetTables();
+                    GetTables();
+                }
             }
         }
 
@@ -95,6 +102,20 @@ namespace PostalApp
                 await tableService.DeleteTableItemAsync(tableList[e.Position].Id.ToString());
                 
                 GetTables();
+            }
+        }
+
+        private bool CheckTableExists(Table table)
+        {
+            var tableFilter = tableList.Where(t => t.TableNumber == table.TableNumber).FirstOrDefault();
+
+            if (tableFilter == null)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
             }
         }
     }

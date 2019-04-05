@@ -37,24 +37,31 @@ namespace PostalApp
 
             btnLogin.Click += async delegate
             {
-                using (UserDialogs.Instance.Loading("Logging In..."))
+                if (editPin.Text != "")
                 {
-                    var staff = await CheckLogin(Integer.ParseInt(editPin.Text));
+                    using (UserDialogs.Instance.Loading("Logging In..."))
+                    {
+                        var staff = await CheckLogin(Integer.ParseInt(editPin.Text));
 
-                    if (staff == null)
-                    {
-                        UserDialogs.Instance.Alert("No user found for that pin");
+                        if (staff == null)
+                        {
+                            UserDialogs.Instance.Alert("Incorrect Pin");
+                        }
+                        else
+                        {
+                            Intent intent = new Intent(this, typeof(Menu));
+                            intent.PutExtra("StaffId", staff.Id);
+                            intent.PutExtra("FirstName", staff.FirstName);
+                            intent.PutExtra("AdminFlag", staff.AdminFlag);
+                            intent.SetFlags(ActivityFlags.NewTask);
+                            StartActivity(intent);
+                            Finish();
+                        }
                     }
-                    else
-                    {
-                        Intent intent = new Intent(this, typeof(Menu));
-                        intent.PutExtra("StaffId", staff.Id);
-                        intent.PutExtra("FirstName", staff.FirstName);
-                        intent.PutExtra("AdminFlag", staff.AdminFlag);
-                        intent.SetFlags(ActivityFlags.NewTask);
-                        StartActivity(intent);
-                        Finish();
-                    }
+                }
+                else
+                {
+                    UserDialogs.Instance.Alert("Please enter a pin");
                 }
             };
         }

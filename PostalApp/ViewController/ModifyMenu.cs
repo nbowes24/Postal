@@ -43,11 +43,8 @@ namespace PostalApp
             btnAddMenuItem = FindViewById<Button>(Resource.Id.buttonAddMenuItem);
             spinnerMenuCategories = FindViewById<Spinner>(Resource.Id.spinnerMenuCategories);
 
-
-
             GetCategories();
             
-
             spinnerMenuCategories.ItemSelected += SpinnerMenuCategories_ItemSelected;
 
             btnAddMenuItem.Click += delegate

@@ -72,6 +72,7 @@ namespace PostalApp
             intent.PutExtra("FirstName", staffList[e.Position].FirstName);
             intent.PutExtra("LastName", staffList[e.Position].LastName);
             intent.PutExtra("Pin", staffList[e.Position].Pin);
+            intent.PutExtra("AdminFlag", staffList[e.Position].AdminFlag);
             StartActivityForResult(intent, 0);
         }
         

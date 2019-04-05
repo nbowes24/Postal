@@ -51,13 +51,6 @@ namespace PostalApp
             btnSubmitOrder = FindViewById<Button>(Resource.Id.buttonSubmitOrder);
 
             GetOrders();
-
-            //listviewOrderItems.ItemClick += listviewOrderItems_ItemClick;
-
-            //btnSubmitOrder.Click += delegate
-            //{
-            //    SubmitOrder();
-            //};
         }
 
         public async void ViewOrderDetails(TableOrder tableOrder)
